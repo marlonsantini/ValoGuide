@@ -1,4 +1,4 @@
-package fingerfire.com.valorant.view.ui.allcharacters
+package fingerfire.com.valorant.view.ui.agents
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,11 +14,10 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
  * Usando Observer para "escutar" as alterações na class de viewmodel
  * Fazendo chamada da view model para trazer lista de agentes
  * e tbm fazendo uso da palavra reservada viewmodel junto com o BY*/
-class HomeFragment : Fragment(R.layout.fragment_home) {
-
+class AgentFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var binding: FragmentHomeBinding
-    private val viewModel: HomeViewModel by viewModel()
+    private val viewModel: AgentViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,18 +32,17 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         observerAgents()
 
         viewModel.getAgents()
-
     }
 
     private fun observerAgents() {
         viewModel.agentsLiveData.observe(viewLifecycleOwner) {
-            binding.tvAgents.text = it.name[1].displayName
+            binding.tvAgents.text = it.agents[1].description
 
         }
     }
 
     companion object {
-        fun newInstance() = HomeFragment()
+        fun newInstance() = AgentFragment()
     }
 
 }

@@ -1,18 +1,16 @@
-package fingerfire.com.valorant.view.ui.allcharacters
+package fingerfire.com.valorant.view.ui.agents
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import fingerfire.com.valorant.data.model.AgentResponse
-import fingerfire.com.valorant.data.repository.AgentsRepository
+import fingerfire.com.valorant.data.repository.ValorantRepository
 import kotlinx.coroutines.launch
-
 
 /** Classe viewmodel com as regras de negocio
  * já com injeção de dependencia, coroutines e livedata */
-class HomeViewModel(private val agentsRepository: AgentsRepository) : ViewModel() {
-
+class AgentViewModel(private val agentsRepository: ValorantRepository) : ViewModel() {
     /**
     MutableLiveData é uma função que recebe objetos que podem ser alterados.
     LiveData é uma função que recebe objetos que NÃO podem ser alterados.
@@ -24,7 +22,6 @@ class HomeViewModel(private val agentsRepository: AgentsRepository) : ViewModel(
            return agentsMutableLiveData
         }
 
-
     fun getAgents() {
         /**
         Chamada do ViewScope.launch do Coroutines para dizer que isso vai executar em outra thread
@@ -35,5 +32,4 @@ class HomeViewModel(private val agentsRepository: AgentsRepository) : ViewModel(
             agentsMutableLiveData.postValue(agentResponse)
         }
     }
-
 }

@@ -1,6 +1,7 @@
 package fingerfire.com.valorant.di
 
-import fingerfire.com.valorant.view.ui.allcharacters.HomeViewModel
+import fingerfire.com.valorant.view.ui.agents.AgentViewModel
+import fingerfire.com.valorant.view.ui.weapons.WeaponViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 /** Classe de modulo feito para as injeção de dependencia da viewmodel onde no exemplo ela está
@@ -10,7 +11,8 @@ class ViewModules {
 
     fun getViewModules() = module {
         viewModel {
-            HomeViewModel(get())
+            AgentViewModel(get())
+            WeaponViewModel(get())
         }
     }
 }

@@ -6,7 +6,7 @@ import com.squareup.moshi.Json
  * sendo usado DataClass e o converter Moshi */
 data class AgentResponse(
     @field:Json(name = "data")
-    val name: List<AgentDataResponse>,
+    val agents: List<AgentDataResponse>,
     @Json(name = "status")
     val status: Int
 )

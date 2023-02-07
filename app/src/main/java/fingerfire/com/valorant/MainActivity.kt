@@ -1,8 +1,8 @@
 package fingerfire.com.valorant
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import fingerfire.com.valorant.view.ui.allcharacters.HomeFragment
+import androidx.appcompat.app.AppCompatActivity
+import fingerfire.com.valorant.view.ui.weapons.WeaponFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, HomeFragment.newInstance())
+                .replace(R.id.container, WeaponFragment.newInstance())
                 .commitNow()
         }
     }
