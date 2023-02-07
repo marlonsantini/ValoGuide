@@ -34,9 +34,4 @@ class WeaponFragment : Fragment() {
 
         }
     }
-
-    companion object {
-        fun newInstance() = WeaponFragment()
-    }
-
 }

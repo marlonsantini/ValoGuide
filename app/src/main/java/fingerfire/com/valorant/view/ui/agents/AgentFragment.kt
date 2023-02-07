@@ -40,9 +40,4 @@ class AgentFragment : Fragment(R.layout.fragment_home) {
 
         }
     }
-
-    companion object {
-        fun newInstance() = AgentFragment()
-    }
-
 }
