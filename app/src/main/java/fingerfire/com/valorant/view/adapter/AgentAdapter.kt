@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import fingerfire.com.valorant.data.model.AgentDataResponse
 import fingerfire.com.valorant.databinding.ItemAgentBinding
+import fingerfire.com.valorant.databinding.ItemAgenteBinding
 
 class AgentAdapter(
     private var agentList: List<AgentDataResponse>
@@ -19,10 +20,18 @@ class AgentAdapter(
     }
 
     override fun onBindViewHolder(holder: AgentViewHolder, position: Int) {
-        with(holder){
-            with(agentList[position]){
+        with(holder) {
+            with(agentList[position]) {
                 binding.tvAgent.text = displayName
-                binding.imAgent.load(bustPortrait)
+                binding.imAgent.load(fullPortrait) {
+                    crossfade(true)
+                    crossfade(1000)
+                }
+                binding.imBackground.load(background) {
+                    crossfade(true)
+                }
+                binding.tvRoleName.text = role.displayName
+
             }
         }
     }

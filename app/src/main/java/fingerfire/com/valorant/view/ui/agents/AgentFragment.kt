@@ -38,10 +38,14 @@ class AgentFragment : Fragment(R.layout.fragment_home) {
 
     private fun observerAgents() {
         viewModel.agentsLiveData.observe(viewLifecycleOwner) {
-            binding.rvAgents.layoutManager = LinearLayoutManager(activity)
-            binding.rvAgents.setHasFixedSize(true)
+            initRecyclerView()
             binding.rvAgents.adapter = AgentAdapter(it.agents)
 
         }
+    }
+
+    private fun initRecyclerView() {
+        binding.rvAgents.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvAgents.setHasFixedSize(true)
     }
 }

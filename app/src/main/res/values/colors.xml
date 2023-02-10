@@ -10,5 +10,6 @@
 
     <color name="main_background">#F316222E</color>
     <color name="background_more_black">#0F1821</color>
+    <color name="main_more_black">#0F1821</color>
     <color name="main_red">#FF4457</color>
 </resources>

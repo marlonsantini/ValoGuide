@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+    <!-- A CardView that contains a TextView -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/main_red"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardUseCompatPadding="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/imAgent"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:contentDescription="@string/app_name" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvAgent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textAllCaps="true"
+            android:textColor="@color/background_more_black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
