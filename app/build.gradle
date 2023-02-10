@@ -54,7 +54,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
 
     //OkHttp
-    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
 
     //MVVM e LiveData
@@ -64,4 +64,7 @@ dependencies {
     //Koin
     implementation 'io.insert-koin:koin-core:3.3.2'
     implementation 'io.insert-koin:koin-android:3.3.2'
+
+    //Coil
+    implementation 'io.coil-kt:coil:2.2.2'
 }

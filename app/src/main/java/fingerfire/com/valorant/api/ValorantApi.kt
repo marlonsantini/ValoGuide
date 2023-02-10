@@ -11,7 +11,8 @@ import retrofit2.http.Query
 interface ValorantApi {
     @GET("agents")
     suspend fun getAgents(
-        @Query("language") language: String
+        @Query("language") language: String,
+        @Query("isPlayableCharacter") isPlayableCharacter: Boolean
     ): AgentResponse
 
     @GET("weapons")

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Valorant</string>
+    <string name="agents">Agents</string>
+    <string name="maps">Maps</string>
+    <string name="arsenal">Arsenal</string>
+    <string name="title_agents">Escolha seu <font color="#FF4457">agente</font> favorito</string>
 </resources>

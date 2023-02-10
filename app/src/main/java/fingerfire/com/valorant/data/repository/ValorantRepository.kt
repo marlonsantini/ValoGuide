@@ -12,7 +12,7 @@ import fingerfire.com.valorant.data.model.WeaponResponse
 class ValorantRepository(private val valorantApi: ValorantApi) {
 
     suspend fun loadAgents(): AgentResponse {
-        return valorantApi.getAgents("pt-BR")
+        return valorantApi.getAgents("pt-BR", true)
     }
 
     suspend fun loadWeapons(): WeaponResponse {
