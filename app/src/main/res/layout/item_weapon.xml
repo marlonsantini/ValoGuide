@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvMaps"
+        android:id="@+id/cvWeapons"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginStart="10dp"
@@ -18,19 +17,19 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/white"
             app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/ivMap"
+                android:id="@+id/ivWeapon"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                tools:background="@color/main_more_black"
+                android:background="@drawable/background_weapon"
                 android:contentDescription="@string/app_name" />
 
             <TextView
-                android:id="@+id/tvMap"
+                android:id="@+id/tvWeapon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"

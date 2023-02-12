@@ -4,5 +4,7 @@ import com.squareup.moshi.Json
 
 data class WeaponDataResponse(
     @Json(name = "displayName")
-    val displayName: String
+    val displayName: String,
+    @Json(name = "displayIcon")
+    val displayIcon: String
 )

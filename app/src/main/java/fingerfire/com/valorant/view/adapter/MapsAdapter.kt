@@ -31,7 +31,6 @@ class MapsAdapter(
         }
     }
 
-
     override fun getItemCount(): Int {
         return mapList.size
     }

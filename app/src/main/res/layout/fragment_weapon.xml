@@ -5,9 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.weapons.WeaponFragment">
 
-    <TextView
-        android:id="@+id/tvWeapons"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvWeapon"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
 
 </FrameLayout>
