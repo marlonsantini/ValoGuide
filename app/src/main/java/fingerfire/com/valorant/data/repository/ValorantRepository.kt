@@ -5,10 +5,6 @@ import fingerfire.com.valorant.data.model.AgentResponse
 import fingerfire.com.valorant.data.model.MapResponse
 import fingerfire.com.valorant.data.model.WeaponResponse
 
-/**
- * Classe de repositorio faz parte da camada de dados
- * Nesse Exmeplo já esta com injeção de de dependencia implementado e coroutines
- * Nessa classe é realizada a gestão de dados */
 class ValorantRepository(private val valorantApi: ValorantApi) {
 
     suspend fun loadAgents(): AgentResponse {

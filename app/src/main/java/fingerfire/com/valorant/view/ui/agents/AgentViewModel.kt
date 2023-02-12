@@ -8,13 +8,8 @@ import fingerfire.com.valorant.data.model.AgentResponse
 import fingerfire.com.valorant.data.repository.ValorantRepository
 import kotlinx.coroutines.launch
 
-/** Classe viewmodel com as regras de negocio
- * já com injeção de dependencia, coroutines e livedata */
 class AgentViewModel(private val agentsRepository: ValorantRepository) : ViewModel() {
-    /**
-    MutableLiveData é uma função que recebe objetos que podem ser alterados.
-    LiveData é uma função que recebe objetos que NÃO podem ser alterados.
-    */
+
     private val agentsMutableLiveData: MutableLiveData<AgentResponse> = MutableLiveData<AgentResponse>()
     val agentsLiveData: LiveData<AgentResponse>
     //uso do get

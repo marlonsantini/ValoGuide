@@ -8,9 +8,7 @@ import fingerfire.com.valorant.di.ViewModules
 import org.koin.core.context.startKoin
 
 class ValorantApplication : Application() {
-    /** Classe de aplicação responsável por dar o star na injeção de dependencia com o Koin
-     * uso da lista de modulos iniciada com sucesso
-     * já declarada no android manifest com android:name */
+
     override fun onCreate() {
         super.onCreate()
 

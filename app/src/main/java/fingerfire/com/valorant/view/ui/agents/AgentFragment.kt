@@ -11,11 +11,6 @@ import fingerfire.com.valorant.databinding.FragmentHomeBinding
 import fingerfire.com.valorant.view.adapter.AgentsAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-/** Classe do fragment responsável pela apresentação da tela
- * Já com injeção de dependencia
- * Usando Observer para "escutar" as alterações na class de viewmodel
- * Fazendo chamada da view model para trazer lista de agentes
- * e tbm fazendo uso da palavra reservada viewmodel junto com o BY*/
 class AgentFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var binding: FragmentHomeBinding
