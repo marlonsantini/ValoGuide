@@ -4,4 +4,5 @@
     <string name="maps">Mapas</string>
     <string name="arsenal">Arsenal</string>
     <string name="title_agents">Escolha Seu <font color="#FF4457">Agente</font> Favorito</string>
+    <string name="title_activity_detail">DetailActivity</string>
 </resources>

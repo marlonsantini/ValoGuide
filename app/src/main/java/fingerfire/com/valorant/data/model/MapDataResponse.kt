@@ -4,5 +4,7 @@ import com.squareup.moshi.Json
 
 data class MapDataResponse(
     @Json(name = "displayName")
-    val displayName: String
+    val displayName: String,
+    @Json(name = "splash")
+    val splash: String
 )

@@ -5,9 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.maps.MapsFragment">
 
-    <TextView
-        android:id="@+id/tvMaps"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMaps"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
 
 </FrameLayout>

@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import fingerfire.com.valorant.databinding.FragmentMapsBinding
+import fingerfire.com.valorant.view.adapter.MapsAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MapsFragment : Fragment() {
@@ -29,9 +31,15 @@ class MapsFragment : Fragment() {
 
     private fun observerAgents() {
         viewModel.mapsLiveData.observe(viewLifecycleOwner) {
-            binding.tvMaps.text = it.maps[1].displayName
+            initRecyclerView()
+            binding.rvMaps.adapter = MapsAdapter(it.maps)
 
         }
+    }
+
+    private fun initRecyclerView() {
+        binding.rvMaps.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        binding.rvMaps.setHasFixedSize(true)
     }
 
 }

@@ -6,11 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import fingerfire.com.valorant.data.model.AgentDataResponse
 import fingerfire.com.valorant.databinding.ItemAgentBinding
-import fingerfire.com.valorant.databinding.ItemAgenteBinding
 
-class AgentAdapter(
-    private var agentList: List<AgentDataResponse>
-) : RecyclerView.Adapter<AgentAdapter.AgentViewHolder>() {
+class AgentsAdapter(
+    private var agentList: List<AgentDataResponse>,
+) : RecyclerView.Adapter<AgentsAdapter.AgentViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AgentViewHolder {
         return AgentViewHolder(
@@ -31,7 +30,6 @@ class AgentAdapter(
                     crossfade(true)
                 }
                 binding.tvRoleName.text = role.displayName
-
             }
         }
     }
@@ -41,4 +39,5 @@ class AgentAdapter(
     }
 
     class AgentViewHolder(val binding: ItemAgentBinding) : RecyclerView.ViewHolder(binding.root)
+
 }

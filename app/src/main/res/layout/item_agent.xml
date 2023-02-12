@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
     <!-- A CardView that contains a TextView -->
     <androidx.cardview.widget.CardView
+        android:id="@+id/cvAgents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -30,7 +31,8 @@
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
                 android:layout_gravity="center"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@tools:sample/avatars"
+                android:contentDescription="@string/app_name" />
 
             <ImageView
                 android:id="@+id/imAgent"
@@ -69,7 +71,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="@color/main_more_black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:text="@string/app_name" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

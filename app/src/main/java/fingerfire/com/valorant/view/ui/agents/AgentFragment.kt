@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import fingerfire.com.valorant.R
 import fingerfire.com.valorant.databinding.FragmentHomeBinding
-import fingerfire.com.valorant.view.adapter.AgentAdapter
+import fingerfire.com.valorant.view.adapter.AgentsAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /** Classe do fragment responsável pela apresentação da tela
@@ -39,8 +39,7 @@ class AgentFragment : Fragment(R.layout.fragment_home) {
     private fun observerAgents() {
         viewModel.agentsLiveData.observe(viewLifecycleOwner) {
             initRecyclerView()
-            binding.rvAgents.adapter = AgentAdapter(it.agents)
-
+            binding.rvAgents.adapter = AgentsAdapter(it.agents)
         }
     }
 

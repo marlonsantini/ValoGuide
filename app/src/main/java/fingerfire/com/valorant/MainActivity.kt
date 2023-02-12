@@ -20,9 +20,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.nav_item_1 -> replaceFragment(AgentFragment())
-                R.id.nav_item_2 -> replaceFragment(WeaponFragment())
-                R.id.nav_item_3 -> replaceFragment(MapsFragment())
+                R.id.agentsFragment -> replaceFragment(AgentFragment())
+                R.id.mapsFragment -> replaceFragment(MapsFragment())
+                R.id.weaponsFragment -> replaceFragment(WeaponFragment())
             }
             true
         }
