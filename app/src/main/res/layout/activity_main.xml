@@ -25,8 +25,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:itemTextColor="@color/main_red"
-        app:itemRippleColor="@color/white"
+        app:itemTextColor="@color/bottom_nav_bar_selector"
         app:itemTextAppearanceActive="@style/Widget.BottomNavigationView"
         app:itemTextAppearanceInactive="@style/Widget.BottomNavigationView"
         app:menu="@menu/menu_nav" />
