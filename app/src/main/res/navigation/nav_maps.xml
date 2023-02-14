@@ -15,7 +15,7 @@
     </fragment>
 <!--    <fragment-->
 <!--        android:id="@+id/mapDetailFragment"-->
-<!--        android:name="com.harunbekcan.valorantproject.ui.fragment.maps.MapDetailFragment"-->
+<!--        android:name="fingerfire.com.valorant.view.ui.maps.MapsFragment"-->
 <!--        tools:layout="@layout/fragment_map_detail">-->
 
 <!--        <argument-->

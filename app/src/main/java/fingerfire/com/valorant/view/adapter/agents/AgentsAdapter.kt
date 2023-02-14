@@ -1,4 +1,4 @@
-package fingerfire.com.valorant.view.adapter
+package fingerfire.com.valorant.view.adapter.agents
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

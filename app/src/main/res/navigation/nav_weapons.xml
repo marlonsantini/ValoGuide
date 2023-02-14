@@ -16,7 +16,7 @@
     </fragment>
 <!--    <fragment-->
 <!--        android:id="@+id/weaponDetailFragment"-->
-<!--        android:name="com.harunbekcan.valorantproject.ui.fragment.weapons.WeaponDetailFragment"-->
+<!--        android:name="fingerfire.com.valorant.view.ui.weapons.WeaponFragment"-->
 <!--        tools:layout="@layout/fragment_weapon_detail">-->
 
 <!--        <argument-->

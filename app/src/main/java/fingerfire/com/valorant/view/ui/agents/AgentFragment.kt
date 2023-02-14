@@ -7,20 +7,20 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import fingerfire.com.valorant.R
-import fingerfire.com.valorant.databinding.FragmentHomeBinding
-import fingerfire.com.valorant.view.adapter.AgentsAdapter
+import fingerfire.com.valorant.databinding.FragmentAgentBinding
+import fingerfire.com.valorant.view.adapter.agents.AgentsAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class AgentFragment : Fragment(R.layout.fragment_home) {
+class AgentFragment : Fragment(R.layout.fragment_agent) {
 
-    private lateinit var binding: FragmentHomeBinding
+    private lateinit var binding: FragmentAgentBinding
     private val viewModel: AgentViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = FragmentAgentBinding.inflate(inflater, container, false)
         return binding.root
     }
 

@@ -22,9 +22,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.agentsFragment -> navController.navigate(R.id.nav_agents)
-                R.id.mapsFragment -> navController.navigate(R.id.nav_maps)
-                R.id.weaponsFragment -> navController.navigate(R.id.nav_weapons)
+                R.id.agents_menu -> navController.navigate(R.id.nav_agents)
+                R.id.maps_menu -> navController.navigate(R.id.nav_maps)
+                R.id.weapons_menu -> navController.navigate(R.id.nav_weapons)
             }
             true
         }
