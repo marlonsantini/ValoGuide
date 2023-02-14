@@ -2,37 +2,34 @@ package fingerfire.com.valorant
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import fingerfire.com.valorant.databinding.ActivityMainBinding
-import fingerfire.com.valorant.view.ui.agents.AgentFragment
-import fingerfire.com.valorant.view.ui.maps.MapsFragment
-import fingerfire.com.valorant.view.ui.weapons.WeaponFragment
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        replaceFragment(AgentFragment())
+
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
 
         binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.agentsFragment -> replaceFragment(AgentFragment())
-                R.id.mapsFragment -> replaceFragment(MapsFragment())
-                R.id.weaponsFragment -> replaceFragment(WeaponFragment())
+                R.id.agentsFragment -> navController.navigate(R.id.nav_agents)
+                R.id.mapsFragment -> navController.navigate(R.id.nav_maps)
+                R.id.weaponsFragment -> navController.navigate(R.id.nav_weapons)
             }
             true
         }
     }
-
-    private fun replaceFragment(fragment: Fragment) {
-
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.container, fragment)
-        fragmentTransaction.commitNow()
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

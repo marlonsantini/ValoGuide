@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_agents"
+    app:startDestination="@id/agentFragment">
+
+    <fragment
+        android:id="@+id/agentFragment"
+        android:name="fingerfire.com.valorant.view.ui.agents.AgentFragment">
+        <action
+            android:id="@+id/action_agentsFragment_to_agentDetailFragment" />
+    </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/agentDetailFragment"-->
+<!--        android:name="com.harunbekcan.valorantproject.ui.fragment.agents.AgentDetailFragment"-->
+<!--        tools:layout="@layout/fragment_agent_detail" >-->
+
+<!--        <argument-->
+<!--            android:name="uuid"-->
+<!--            app:argType="string" />-->
+<!--    </fragment>-->
+</navigation>

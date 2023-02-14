@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_maps"
+    app:startDestination="@id/mapFragment">
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="fingerfire.com.valorant.view.ui.maps.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/action_mapsFragment_to_mapDetailFragment" />
+    </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/mapDetailFragment"-->
+<!--        android:name="com.harunbekcan.valorantproject.ui.fragment.maps.MapDetailFragment"-->
+<!--        tools:layout="@layout/fragment_map_detail">-->
+
+<!--        <argument-->
+<!--            android:name="uuid"-->
+<!--            app:argType="string" />-->
+<!--    </fragment>-->
+</navigation>
