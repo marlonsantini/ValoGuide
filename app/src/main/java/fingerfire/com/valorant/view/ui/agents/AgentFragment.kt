@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import fingerfire.com.valorant.R
 import fingerfire.com.valorant.databinding.FragmentAgentBinding
@@ -14,6 +15,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class AgentFragment : Fragment(R.layout.fragment_agent) {
 
     private lateinit var binding: FragmentAgentBinding
+    private lateinit var agentsAdapter : AgentsAdapter
     private val viewModel: AgentViewModel by viewModel()
 
     override fun onCreateView(
@@ -34,7 +36,7 @@ class AgentFragment : Fragment(R.layout.fragment_agent) {
     private fun observerAgents() {
         viewModel.agentsLiveData.observe(viewLifecycleOwner) {
             initRecyclerView()
-            binding.rvAgents.adapter = AgentsAdapter(it.agents)
+            initAdapter()
         }
     }
 
@@ -42,4 +44,17 @@ class AgentFragment : Fragment(R.layout.fragment_agent) {
         binding.rvAgents.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         binding.rvAgents.setHasFixedSize(true)
     }
+
+    private fun initAdapter(){
+        viewModel.agentsLiveData.value?.let { it ->
+            agentsAdapter = AgentsAdapter(it.agents, itemClick = {
+                it.uuid.let { uuid->
+                    findNavController().navigate(AgentFragmentDirections.actionAgentsFragmentToAgentDetailFragment(uuid))
+                }
+            })
+            binding.rvAgents.adapter = agentsAdapter
+        }
+    }
+
+
 }

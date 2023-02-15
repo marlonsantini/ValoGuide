@@ -1,5 +1,6 @@
 package fingerfire.com.valorant.di
 
+import fingerfire.com.valorant.view.ui.agents.AgentDetailViewModel
 import fingerfire.com.valorant.view.ui.agents.AgentViewModel
 import fingerfire.com.valorant.view.ui.maps.MapsViewModel
 import fingerfire.com.valorant.view.ui.weapons.WeaponViewModel
@@ -17,6 +18,9 @@ class ViewModules {
         }
         viewModel {
             MapsViewModel(get())
+        }
+        viewModel {
+            AgentDetailViewModel(get())
         }
     }
 }

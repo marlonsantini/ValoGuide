@@ -9,6 +9,7 @@ import fingerfire.com.valorant.databinding.ItemAgentBinding
 
 class AgentsAdapter(
     private var agentList: List<AgentDataResponse>,
+    private val itemClick: (AgentDataResponse) -> Unit
 ) : RecyclerView.Adapter<AgentsAdapter.AgentViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AgentViewHolder {
@@ -30,6 +31,10 @@ class AgentsAdapter(
                     crossfade(true)
                 }
                 binding.tvRoleName.text = role.displayName
+
+                binding.cvAgents.setOnClickListener {
+                    itemClick.invoke(agentList[position])
+                }
             }
         }
     }

@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 
 data class AgentDataResponse(
     @field:Json(name = "uuid")
-    val idAgent: String,
+    val uuid: String,
     @Json(name = "displayName")
     val displayName: String,
     @Json(name = "description")

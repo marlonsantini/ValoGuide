@@ -10,18 +10,15 @@ import kotlinx.coroutines.launch
 
 class AgentViewModel(private val agentsRepository: ValorantRepository) : ViewModel() {
 
-    private val agentsMutableLiveData: MutableLiveData<AgentResponse> = MutableLiveData<AgentResponse>()
+    private val agentsMutableLiveData: MutableLiveData<AgentResponse> =
+        MutableLiveData<AgentResponse>()
     val agentsLiveData: LiveData<AgentResponse>
-    //uso do get
+        //uso do get
         get() {
-           return agentsMutableLiveData
+            return agentsMutableLiveData
         }
 
     fun getAgents() {
-        /**
-        Chamada do ViewScope.launch do Coroutines para dizer que isso vai executar em outra thread
-        e não na principal
-        */
         viewModelScope.launch {
             val agentResponse = agentsRepository.loadAgents()
             agentsMutableLiveData.postValue(agentResponse)
