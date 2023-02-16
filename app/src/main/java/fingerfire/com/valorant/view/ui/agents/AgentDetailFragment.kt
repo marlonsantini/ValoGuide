@@ -44,7 +44,9 @@ class AgentDetailFragment : Fragment() {
         binding.apply {
             agentDataResponse.let { item ->
                 binding.agentIconImageView.load(item.fullPortrait)
-                binding.agentNameTextView.text = item.displayName
+                binding.tvAgentName.text = item.displayName
+                tvRole.text = item.role.description
+                binding.tvDesc.text = item.description
             }
         }
     }

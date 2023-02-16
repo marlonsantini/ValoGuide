@@ -12,4 +12,9 @@
     <color name="background_more_black">#0F1821</color>
     <color name="main_more_black">#0F1821</color>
     <color name="main_red">#FF4457</color>
+    <color name="text_grey">#C0C0C0</color>
+    <color name="text_grey_light">#ff9e9e9e</color>
+    <color name="text_shadow">#7F000000</color>
+    <color name="transparent">#66FFFFFF</color>
+    <color name="light_blue">#212830</color>
 </resources>

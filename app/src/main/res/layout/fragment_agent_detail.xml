@@ -7,6 +7,7 @@
     android:background="@color/main_more_black">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/agentCl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:background="@color/main_more_black">
@@ -14,59 +15,75 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/agentInfoContainer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/agentIconImageView"
                 android:layout_width="match_parent"
                 android:layout_height="360dp"
-                android:background="@color/main_more_black"
+                android:background="@color/light_blue"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:shapeAppearanceOverlay="@style/ImageView.Corner" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/backButtonImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_back_white"
                 android:layout_margin="16dp"
                 android:padding="4dp"
+                android:src="@drawable/ic_back_white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/agentNameTextView"
+                android:id="@+id/tvAgentName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                android:textAllCaps="true"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="35sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/roleTextView"
-                app:layout_constraintEnd_toEndOf="@+id/roleTextView"
-                app:layout_constraintStart_toStartOf="@+id/roleTextView"
+                app:layout_constraintBottom_toTopOf="@+id/tvRole"
+                app:layout_constraintEnd_toEndOf="@+id/tvRole"
+                app:layout_constraintStart_toStartOf="@+id/tvRole"
                 tools:text="Fade" />
 
             <TextView
-                android:id="@+id/roleTextView"
+                android:id="@+id/tvRole"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
                 android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_corner"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="3dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 tools:text="Initiator" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/descriptionTitleTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="@string/app_name"
-            android:textColor="@color/main_red"
+            android:paddingHorizontal="30dp"
+            android:text="@string/biography"
+            android:textAllCaps="true"
+            android:shadowColor="@color/text_grey"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -74,14 +91,17 @@
             app:layout_constraintTop_toBottomOf="@+id/agentInfoContainer" />
 
         <TextView
-            android:id="@+id/descriptionTextView"
+            android:id="@+id/tvDesc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            android:gravity="center"
-            android:textColor="@color/white"
+            android:paddingHorizontal="30dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="-1"
+            android:shadowDy="-1"
+            android:shadowRadius="1"
+            android:textColor="@color/text_grey_light"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/descriptionTitleTextView"
@@ -89,30 +109,38 @@
 
         <TextView
             android:id="@+id/specialAbilityTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/main_red"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/descriptionTextView"
-            android:text="@string/app_name" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/abilitiesRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:paddingBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:paddingHorizontal="30dp"
+            android:text="@string/special_abilities"
+            android:textAllCaps="true"
+            android:shadowColor="@color/text_grey"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDesc" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAbilities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:clipToPadding="false"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/specialAbilityTextView"
+            android:paddingBottom="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:itemCount="4"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/specialAbilityTextView"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_abilities" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

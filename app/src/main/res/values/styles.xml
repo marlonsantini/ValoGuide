@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Customize your BottomNavigationView here. -->
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/alata</item>
+        <item name="android:textSize">27sp</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">65dp</item>
+        <item name="android:layout_height">5dp</item>
+        <item name="android:layout_gravity">center</item>
+        <!--        <item name="android:background">?android:attr/listDivider</item>-->
+        <item name="android:background">@color/background_more_black</item>
+    </style>
+
+    <style name="ImageView.Corner" parent="">
+        <item name="cornerSizeBottomRight">32dp</item>
+        <item name="cornerSizeBottomLeft">32dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+</resources>

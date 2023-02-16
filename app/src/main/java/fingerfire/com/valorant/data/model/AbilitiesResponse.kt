@@ -1,6 +1,6 @@
 package fingerfire.com.valorant.data.model
 
-data class AbilityResponse(
+data class AbilitiesResponse(
     val description: String,
     val displayIcon: String,
     val displayName: String,

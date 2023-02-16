@@ -14,17 +14,4 @@
         <item name="android:statusBarColor">@color/main_red</item>
         <!-- Customize your theme here. -->
     </style>
-    <!-- Customize your BottomNavigationView here. -->
-    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
-        <item name="fontFamily">@font/alata</item>
-        <item name="android:textSize">27sp</item>
-    </style>
-
-    <style name="Divider">
-        <item name="android:layout_width">65dp</item>
-        <item name="android:layout_height">5dp</item>
-        <item name="android:layout_gravity">center</item>
-<!--        <item name="android:background">?android:attr/listDivider</item>-->
-        <item name="android:background">@color/background_more_black</item>
-    </style>
 </resources>

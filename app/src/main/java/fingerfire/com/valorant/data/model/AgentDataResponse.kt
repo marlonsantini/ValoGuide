@@ -16,9 +16,9 @@ data class AgentDataResponse(
     @Json(name = "displayIcon")
     val displayIcon: String,
     @Json(name = "abilities")
-    val abilities: List<AbilityResponse>,
+    val abilities: List<AbilitiesResponse>,
     @Json(name = "role")
     val role: RoleResponse,
     @Json(name = "voiceLine")
-    val voiceLineResponse: VoiceLineResponse
+    val voiceLine: VoiceLineResponse
 )
