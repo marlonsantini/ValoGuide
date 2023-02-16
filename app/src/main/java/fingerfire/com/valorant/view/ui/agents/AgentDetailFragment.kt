@@ -10,6 +10,7 @@ import androidx.navigation.fragment.navArgs
 import coil.load
 import fingerfire.com.valorant.data.model.AgentDataResponse
 import fingerfire.com.valorant.databinding.FragmentAgentDetailBinding
+import fingerfire.com.valorant.view.adapter.agents.AbilitiesAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AgentDetailFragment : Fragment() {
@@ -45,8 +46,9 @@ class AgentDetailFragment : Fragment() {
             agentDataResponse.let { item ->
                 binding.agentIconImageView.load(item.fullPortrait)
                 binding.tvAgentName.text = item.displayName
-                tvRole.text = item.role.description
+                tvRole.text = item.role.displayName
                 binding.tvDesc.text = item.description
+                binding.rvAbilities.adapter = AbilitiesAdapter(item.abilities)
             }
         }
     }

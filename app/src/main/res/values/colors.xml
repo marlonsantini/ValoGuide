@@ -17,4 +17,5 @@
     <color name="text_shadow">#7F000000</color>
     <color name="transparent">#66FFFFFF</color>
     <color name="light_blue">#212830</color>
+    <color name="dark_blue">#222b43</color>
 </resources>

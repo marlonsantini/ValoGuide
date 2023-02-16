@@ -3,6 +3,7 @@ package fingerfire.com.valorant.view.adapter.agents
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import fingerfire.com.valorant.data.model.AbilitiesResponse
 import fingerfire.com.valorant.databinding.ItemAbilitiesBinding
 
@@ -21,6 +22,8 @@ class AbilitiesAdapter(
         with(holder){
             with(abilitiesList[position]) {
                 binding.abilityTitleTextView.text = displayName
+                binding.abilityImageView.load(displayIcon)
+                binding.abilityDescriptionTextView.text = description
             }
         }
 

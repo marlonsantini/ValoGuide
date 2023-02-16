@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/main_more_black">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/agentCl"
@@ -24,7 +23,7 @@
                 android:id="@+id/agentIconImageView"
                 android:layout_width="match_parent"
                 android:layout_height="360dp"
-                android:background="@color/light_blue"
+                android:background="@color/text_grey"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -60,6 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
                 android:layout_marginBottom="24dp"
+                android:textColor="@color/main_red"
                 android:background="@drawable/rounded_corner"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="3dp"
@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:paddingHorizontal="30dp"
+            android:paddingHorizontal="16dp"
             android:text="@string/biography"
             android:textAllCaps="true"
             android:shadowColor="@color/text_grey"
@@ -95,7 +95,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:paddingHorizontal="30dp"
+            android:paddingHorizontal="16dp"
             android:shadowColor="@color/black"
             android:shadowDx="-1"
             android:shadowDy="-1"
@@ -112,7 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:paddingHorizontal="30dp"
+            android:paddingHorizontal="16dp"
             android:text="@string/special_abilities"
             android:textAllCaps="true"
             android:shadowColor="@color/text_grey"
