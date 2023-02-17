@@ -1,7 +1,7 @@
 package fingerfire.com.valorant.data.repository
 
 import fingerfire.com.valorant.api.ValorantApi
-import fingerfire.com.valorant.data.model.*
+import fingerfire.com.valorant.data.response.*
 
 class ValorantRepository(private val valorantApi: ValorantApi) {
 

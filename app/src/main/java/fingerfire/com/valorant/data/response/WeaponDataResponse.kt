@@ -1,4 +1,4 @@
-package fingerfire.com.valorant.data.model
+package fingerfire.com.valorant.data.response
 
 import com.squareup.moshi.Json
 
@@ -8,5 +8,7 @@ data class WeaponDataResponse(
     @Json(name = "displayName")
     val displayName: String,
     @Json(name = "displayIcon")
-    val displayIcon: String
+    val displayIcon: String,
+    @Json(name = "shopData")
+    val shopData: String,
 )

@@ -1,4 +1,4 @@
-package fingerfire.com.valorant.data.model
+package fingerfire.com.valorant.data.response
 
 data class MediaResponse(
     val id: Int,

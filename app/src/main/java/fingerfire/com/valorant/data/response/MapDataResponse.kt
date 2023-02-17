@@ -1,4 +1,4 @@
-package fingerfire.com.valorant.data.model
+package fingerfire.com.valorant.data.response
 
 import com.squareup.moshi.Json
 
@@ -9,6 +9,8 @@ data class MapDataResponse(
     val displayName: String,
     @Json(name = "splash")
     val splash: String,
-    @Json(name = "displayicon")
-    val displayicon: String
+    @Json(name = "displayIcon")
+    val displayIcon: String,
+    @Json(name = "coordinates")
+    val coordinates: String
 )

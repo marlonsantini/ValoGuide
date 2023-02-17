@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
-import fingerfire.com.valorant.data.model.AgentDataResponse
+import fingerfire.com.valorant.data.response.AgentDataResponse
 import fingerfire.com.valorant.databinding.FragmentAgentDetailBinding
 import fingerfire.com.valorant.view.adapter.agents.AbilitiesAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel

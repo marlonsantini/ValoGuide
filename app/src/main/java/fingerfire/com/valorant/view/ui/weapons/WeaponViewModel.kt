@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import fingerfire.com.valorant.data.model.WeaponResponse
+import fingerfire.com.valorant.data.response.WeaponResponse
 import fingerfire.com.valorant.data.repository.ValorantRepository
 import kotlinx.coroutines.launch
 

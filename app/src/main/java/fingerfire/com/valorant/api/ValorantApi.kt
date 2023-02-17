@@ -1,6 +1,6 @@
 package fingerfire.com.valorant.api
 
-import fingerfire.com.valorant.data.model.*
+import fingerfire.com.valorant.data.response.*
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
