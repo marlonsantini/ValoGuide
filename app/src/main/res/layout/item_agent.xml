@@ -28,20 +28,20 @@
                 android:id="@+id/imBackground"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
                 android:layout_gravity="center"
-                tools:srcCompat="@tools:sample/avatars"
-                android:contentDescription="@string/app_name" />
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@tools:sample/avatars" />
 
             <ImageView
                 android:id="@+id/imAgent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
                 android:layout_gravity="center"
-                android:contentDescription="@string/app_name" />
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop" />
         </FrameLayout>
 
         <LinearLayout
@@ -56,6 +56,7 @@
                 android:id="@+id/tvAgent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
                 android:gravity="center"
                 android:text="@string/app_name"
                 android:textAllCaps="true"
@@ -69,10 +70,11 @@
                 android:id="@+id/tvRoleName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
                 android:gravity="center"
+                android:text="@string/app_name"
                 android:textColor="@color/main_more_black"
-                android:textSize="20sp"
-                android:text="@string/app_name" />
+                android:textSize="20sp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
