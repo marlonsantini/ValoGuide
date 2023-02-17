@@ -1,4 +1,4 @@
-package fingerfire.com.valorant.view.adapter
+package fingerfire.com.valorant.view.adapter.maps
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,6 +9,7 @@ import fingerfire.com.valorant.databinding.ItemMapBinding
 
 class MapsAdapter(
     private var mapList: List<MapDataResponse>,
+    private val itemClick: (MapDataResponse) -> Unit
 ) : RecyclerView.Adapter<MapsAdapter.MapViewHolder>() {
 
 
@@ -27,6 +28,9 @@ class MapsAdapter(
                     crossfade(true)
                 }
 
+                binding.cvMaps.setOnClickListener {
+                    itemClick.invoke(mapList[position])
+                }
             }
         }
     }

@@ -1,10 +1,7 @@
 package fingerfire.com.valorant.data.repository
 
 import fingerfire.com.valorant.api.ValorantApi
-import fingerfire.com.valorant.data.model.AgentDetailResponse
-import fingerfire.com.valorant.data.model.AgentResponse
-import fingerfire.com.valorant.data.model.MapResponse
-import fingerfire.com.valorant.data.model.WeaponResponse
+import fingerfire.com.valorant.data.model.*
 
 class ValorantRepository(private val valorantApi: ValorantApi) {
 
@@ -20,8 +17,16 @@ class ValorantRepository(private val valorantApi: ValorantApi) {
         return valorantApi.getWeapons("pt-BR")
     }
 
+    suspend fun getWeaponDetail(weaponUuid: String): WeaponDetailResponse {
+        return valorantApi.getWeaponsUuid(weaponUuid,"pt-BR")
+    }
+
     suspend fun loadMaps(): MapResponse {
         return valorantApi.getMaps("pt-BR")
+    }
+
+    suspend fun getMapDetail(mapUuid: String): MapDetailResponse {
+        return valorantApi.getMapsUuid(mapUuid,"pt-BR")
     }
 
 }

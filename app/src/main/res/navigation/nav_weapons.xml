@@ -7,20 +7,18 @@
 
     <fragment
         android:id="@+id/weaponFragment"
-        android:name="fingerfire.com.valorant.view.ui.weapons.WeaponFragment"
-        android:label="fragment_weapons"
-        tools:layout="@layout/fragment_weapon" >
+        android:name="fingerfire.com.valorant.view.ui.weapons.WeaponFragment">
         <action
-            android:id="@+id/action_weaponsFragment_to_weaponDetailFragment" />
-<!--            app:destination="@id/weaponDetailFragment" />-->
+            android:id="@+id/action_weaponsFragment_to_weaponDetailFragment"
+            app:destination="@id/weaponDetailFragment" />
     </fragment>
-<!--    <fragment-->
-<!--        android:id="@+id/weaponDetailFragment"-->
-<!--        android:name="fingerfire.com.valorant.view.ui.weapons.WeaponFragment"-->
-<!--        tools:layout="@layout/fragment_weapon_detail">-->
+    <fragment
+        android:id="@+id/weaponDetailFragment"
+        android:name="fingerfire.com.valorant.view.ui.weapons.WeaponDetailFragment"
+        tools:layout="@layout/fragment_weapon_detail">
 
-<!--        <argument-->
-<!--            android:name="uuid"-->
-<!--            app:argType="string" />-->
-<!--    </fragment>-->
+        <argument
+            android:name="uuid"
+            app:argType="string" />
+    </fragment>
 </navigation>

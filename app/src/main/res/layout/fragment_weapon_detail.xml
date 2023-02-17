@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:background="@color/dark_blue">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/weaponInfoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/weaponIconImageView"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:background="@color/light_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ImageView.Corner" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/backButtonImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back_white"
+                android:layout_margin="16dp"
+                android:padding="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/weaponNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/weaponCategoryTextView"
+                app:layout_constraintEnd_toEndOf="@+id/weaponCategoryTextView"
+                app:layout_constraintStart_toStartOf="@+id/weaponCategoryTextView"
+                tools:text="Odin" />
+
+            <TextView
+                android:id="@+id/weaponCategoryTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Heavy" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/damageRangeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/weaponInfoContainer">
+
+            <TextView
+                android:id="@+id/damageRangeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:textStyle="bold"
+                android:text="@string/app_name"
+                android:textAlignment="center"
+                android:textColor="@color/main_red"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/headDamageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/main_red"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/damageRangeTextView"
+                tools:text="Head - 95" />
+
+            <ProgressBar
+                android:id="@+id/headProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="56dp"
+                android:layout_marginEnd="56dp"
+                android:scaleY="4"
+                android:max="200"
+                android:progressBackgroundTint="@color/white"
+                android:progressTint="@color/main_red"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headDamageTextView"
+                tools:progress="24"/>
+
+            <TextView
+                android:id="@+id/bodyDamageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/main_red"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headProgressBar"
+                tools:text="Body - 35" />
+
+            <ProgressBar
+                android:id="@+id/bodyProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                android:scaleY="4"
+                android:max="200"
+                android:progressTint="@color/main_red"
+                android:progressBackgroundTint="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/headProgressBar"
+                app:layout_constraintStart_toStartOf="@+id/headProgressBar"
+                app:layout_constraintTop_toBottomOf="@+id/bodyDamageTextView"
+                tools:progress="24"/>
+
+            <TextView
+                android:id="@+id/legDamageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/main_red"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bodyProgressBar"
+                tools:text="Leg - 32.5" />
+
+            <ProgressBar
+                android:id="@+id/legProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:scaleY="4"
+                android:max="200"
+                android:layout_marginTop="4dp"
+                android:progressTint="@color/main_red"
+                android:progressBackgroundTint="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/bodyProgressBar"
+                app:layout_constraintStart_toStartOf="@+id/bodyProgressBar"
+                app:layout_constraintTop_toBottomOf="@+id/legDamageTextView"
+                tools:progress="24"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/skinsTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:textStyle="bold"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="@color/main_red"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/damageRangeContainer" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/skinsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="32dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/skinsTitleTextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="RtlSymmetry" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

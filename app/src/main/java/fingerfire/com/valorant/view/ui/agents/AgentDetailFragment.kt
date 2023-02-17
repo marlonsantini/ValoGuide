@@ -16,8 +16,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class AgentDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentAgentDetailBinding
-    private val args : AgentDetailFragmentArgs by navArgs()
-    private  val viewModel: AgentDetailViewModel by viewModel()
+    private val args: AgentDetailFragmentArgs by navArgs()
+    private val viewModel: AgentDetailViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +35,7 @@ class AgentDetailFragment : Fragment() {
 
     }
 
-    private fun initBackButtonClickListener(){
+    private fun initBackButtonClickListener() {
         binding.backButtonImageView.setOnClickListener {
             findNavController().popBackStack()
         }
@@ -54,7 +54,7 @@ class AgentDetailFragment : Fragment() {
     }
 
     private fun initAgentDetailObserve() {
-        viewModel.agentsDetailLiveData.observe(viewLifecycleOwner){
+        viewModel.agentsDetailLiveData.observe(viewLifecycleOwner) {
             initUi(it.data)
         }
     }

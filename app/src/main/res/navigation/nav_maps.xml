@@ -7,19 +7,18 @@
 
     <fragment
         android:id="@+id/mapFragment"
-        android:name="fingerfire.com.valorant.view.ui.maps.MapsFragment"
-        android:label="fragment_maps"
-        tools:layout="@layout/fragment_maps" >
+        android:name="fingerfire.com.valorant.view.ui.maps.MapsFragment">
         <action
-            android:id="@+id/action_mapsFragment_to_mapDetailFragment" />
+            android:id="@+id/action_mapsFragment_to_mapDetailFragment"
+            app:destination="@id/mapDetailFragment"/>
     </fragment>
-<!--    <fragment-->
-<!--        android:id="@+id/mapDetailFragment"-->
-<!--        android:name="fingerfire.com.valorant.view.ui.maps.MapsFragment"-->
-<!--        tools:layout="@layout/fragment_map_detail">-->
+    <fragment
+        android:id="@+id/mapDetailFragment"
+        android:name="fingerfire.com.valorant.view.ui.maps.MapDetailFragment"
+        tools:layout="@layout/fragment_map_detail">
 
-<!--        <argument-->
-<!--            android:name="uuid"-->
-<!--            app:argType="string" />-->
-<!--    </fragment>-->
+        <argument
+            android:name="uuid"
+            app:argType="string" />
+    </fragment>
 </navigation>
