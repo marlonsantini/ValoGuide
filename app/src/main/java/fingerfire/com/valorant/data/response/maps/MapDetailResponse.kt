@@ -1,4 +1,4 @@
-package fingerfire.com.valorant.data.response
+package fingerfire.com.valorant.data.response.maps
 
 import com.squareup.moshi.Json
 

@@ -1,6 +1,8 @@
-package fingerfire.com.valorant.data.response
+package fingerfire.com.valorant.data.response.agents
 
 import com.squareup.moshi.Json
+import fingerfire.com.valorant.data.response.RoleResponse
+import fingerfire.com.valorant.data.response.VoiceLineResponse
 
 data class AgentDataResponse(
     @field:Json(name = "uuid")

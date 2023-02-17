@@ -1,7 +1,12 @@
 package fingerfire.com.valorant.data.repository
 
 import fingerfire.com.valorant.api.ValorantApi
-import fingerfire.com.valorant.data.response.*
+import fingerfire.com.valorant.data.response.agents.AgentDetailResponse
+import fingerfire.com.valorant.data.response.agents.AgentResponse
+import fingerfire.com.valorant.data.response.maps.MapDetailResponse
+import fingerfire.com.valorant.data.response.maps.MapResponse
+import fingerfire.com.valorant.data.response.weapons.WeaponDetailResponse
+import fingerfire.com.valorant.data.response.weapons.WeaponResponse
 
 class ValorantRepository(private val valorantApi: ValorantApi) {
 
