@@ -43,6 +43,11 @@ class WeaponDetailFragment : Fragment() {
         binding.apply {
             weaponDataResponse.let { item ->
                 binding.weaponIconImageView.load(item.displayIcon)
+                binding.weaponNameTextView.text = item.displayName
+                binding.weaponCategoryTextView.text = item.shopData.categoryText
+                binding.headProgressBar.progress = 50
+                binding.bodyProgressBar.progress = 100
+                binding.legProgressBar.progress = 30
 
             }
         }

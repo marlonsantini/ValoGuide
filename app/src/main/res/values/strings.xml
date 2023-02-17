@@ -5,6 +5,8 @@
     <string name="arsenal">Arsenal</string>
     <string name="biography">// Biografia</string>
     <string name="special_abilities">// Habilidades especiais</string>
+    <string name="damage_range">// Dano</string>
+    <string name="skins">// Skins</string>
     <string name="title_agents">Escolha Seu <font color="#FF4457">Agente</font> Favorito</string>
     <string name="title_activity_detail">DetailActivity</string>
 </resources>

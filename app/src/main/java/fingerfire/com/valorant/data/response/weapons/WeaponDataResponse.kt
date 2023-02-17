@@ -10,5 +10,5 @@ data class WeaponDataResponse(
     @Json(name = "displayIcon")
     val displayIcon: String,
     @Json(name = "shopData")
-    val shopData: String,
+    val shopData: ShopDataResponse
 )
