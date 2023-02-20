@@ -8,7 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
-import fingerfire.com.valorant.data.response.weapons.WeaponDataResponse
+import fingerfire.com.valorant.data.response.weapons.DamageRangesResponse
+import fingerfire.com.valorant.data.response.weapons.WeaponDetailDataResponse
 import fingerfire.com.valorant.databinding.FragmentWeaponDetailBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -19,8 +20,7 @@ class WeaponDetailFragment : Fragment() {
     private val viewModel: WeaponDetailViewModel by viewModel()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentWeaponDetailBinding.inflate(inflater, container, false)
         return binding.root
@@ -39,16 +39,27 @@ class WeaponDetailFragment : Fragment() {
         }
     }
 
-    private fun initUi(weaponDataResponse: WeaponDataResponse) {
+    private fun initUi(weaponDetailDataResponse: WeaponDetailDataResponse) {
         binding.apply {
-            weaponDataResponse.let { item ->
+            weaponDetailDataResponse.let { item ->
                 binding.weaponIconImageView.load(item.displayIcon)
                 binding.weaponNameTextView.text = item.displayName
-                binding.weaponCategoryTextView.text = item.shopData.categoryText
-                binding.headProgressBar.progress = 50
-                binding.bodyProgressBar.progress = 100
-                binding.legProgressBar.progress = 30
 
+                //weaponDetailResponseConvertToModel(weaponDataResponse)
+
+                if (item.displayName != "Confronto") {
+                    binding.weaponCategoryTextView.text = item.shopData.categoryText
+
+                    binding.headProgressBar.progress =
+                        item.weaponStats.damageRanges[0].headDamage.toInt()
+                    binding.bodyProgressBar.progress =
+                        item.weaponStats.damageRanges[0].bodyDamage.toInt()
+                    binding.legProgressBar.progress =
+                        item.weaponStats.damageRanges[0].legDamage.toInt()
+
+                } else {
+                    binding.damageRangeContainer.visibility = View.GONE
+                }
             }
         }
     }
@@ -57,5 +68,17 @@ class WeaponDetailFragment : Fragment() {
         viewModel.weaponsDetailLiveData.observe(viewLifecycleOwner) {
             initUi(it.data)
         }
+    }
+
+    private fun weaponDetailResponseConvertToModel(weaponDetailDataResponse: WeaponDetailDataResponse): List<DamageRangesResponse> {
+        val damageList = arrayListOf<DamageRangesResponse>()
+        weaponDetailDataResponse.weaponStats.damageRanges.forEach { damageRange ->
+            damageList.add(
+                DamageRangesResponse(
+                    damageRange.headDamage, damageRange.bodyDamage, damageRange.legDamage
+                )
+            )
+        }
+        return damageList
     }
 }
