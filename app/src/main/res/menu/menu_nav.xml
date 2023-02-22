@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/agents_menu"
+        android:id="@+id/nav_agents"
         android:title="@string/agents" />
 
     <item
-        android:id="@+id/maps_menu"
+        android:id="@+id/nav_maps"
         android:title="@string/maps" />
 
     <item
-        android:id="@+id/weapons_menu"
+        android:id="@+id/nav_weapons"
         android:title="@string/arsenal" />
 
 </menu>

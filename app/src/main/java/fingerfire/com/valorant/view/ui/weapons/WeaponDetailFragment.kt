@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
-import fingerfire.com.valorant.data.response.weapons.DamageRangesResponse
 import fingerfire.com.valorant.data.response.weapons.WeaponDetailDataResponse
 import fingerfire.com.valorant.databinding.FragmentWeaponDetailBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -45,10 +44,13 @@ class WeaponDetailFragment : Fragment() {
                 binding.weaponIconImageView.load(item.displayIcon)
                 binding.weaponNameTextView.text = item.displayName
 
-                //weaponDetailResponseConvertToModel(weaponDataResponse)
 
                 if (item.displayName != "Confronto") {
                     binding.weaponCategoryTextView.text = item.shopData.categoryText
+
+//                    var damage = weaponDetailResponseConvertToModel(weaponDetailDataResponse)
+//                    damage[0].headDamage
+
 
                     binding.headProgressBar.progress =
                         item.weaponStats.damageRanges[0].headDamage.toInt()
@@ -70,15 +72,15 @@ class WeaponDetailFragment : Fragment() {
         }
     }
 
-    private fun weaponDetailResponseConvertToModel(weaponDetailDataResponse: WeaponDetailDataResponse): List<DamageRangesResponse> {
-        val damageList = arrayListOf<DamageRangesResponse>()
-        weaponDetailDataResponse.weaponStats.damageRanges.forEach { damageRange ->
-            damageList.add(
-                DamageRangesResponse(
-                    damageRange.headDamage, damageRange.bodyDamage, damageRange.legDamage
-                )
-            )
-        }
-        return damageList
-    }
+//    private fun weaponDetailResponseConvertToModel(weaponDetailDataResponse: WeaponDetailDataResponse): List<DamageRangesResponse> {
+//        val damageList = arrayListOf<DamageRangesResponse>()
+//        weaponDetailDataResponse.weaponStats.damageRanges.forEach { damageRange ->
+//            damageList.add(
+//                DamageRangesResponse(
+//                    damageRange.headDamage, damageRange.bodyDamage, damageRange.legDamage
+//                )
+//            )
+//        }
+//        return damageList
+//    }
 }

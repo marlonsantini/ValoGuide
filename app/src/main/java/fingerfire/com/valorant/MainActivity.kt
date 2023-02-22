@@ -1,9 +1,11 @@
 package fingerfire.com.valorant
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import fingerfire.com.valorant.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,18 +17,34 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initNavController()
 
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+    }
+
+    private fun initNavController(){
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+        binding.bottomNavigation.setupWithNavController(navController)
+        onDestinationChanged(navController)
+    }
 
-        binding.bottomNavigation.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.agents_menu -> navController.navigate(R.id.nav_agents)
-                R.id.maps_menu -> navController.navigate(R.id.nav_maps)
-                R.id.weapons_menu -> navController.navigate(R.id.nav_weapons)
+    private fun onDestinationChanged(navController: NavController){
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+
+            when (destination.id) {
+                R.id.agentFragment -> {
+                    binding.bottomNavigation.visibility = View.VISIBLE
+                }
+                R.id.mapFragment -> {
+                    binding.bottomNavigation.visibility = View.VISIBLE
+                }
+                R.id.weaponFragment -> {
+                    binding.bottomNavigation.visibility = View.VISIBLE
+                }
+                else -> {
+                    binding.bottomNavigation.visibility = View.GONE
+                }
             }
-            true
         }
     }
 
