@@ -12,5 +12,7 @@ data class WeaponDetailDataResponse(
     @Json(name = "weaponStats")
     val weaponStats: WeaponStatsResponse,
     @Json(name = "shopData")
-    val shopData: ShopDataResponse
+    val shopData: ShopDataResponse,
+    @Json(name = "skins")
+    val skins: MutableList<SkinsResponse>
 )

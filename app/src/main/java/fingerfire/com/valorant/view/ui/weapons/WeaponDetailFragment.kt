@@ -10,6 +10,7 @@ import androidx.navigation.fragment.navArgs
 import coil.load
 import fingerfire.com.valorant.data.response.weapons.WeaponDetailDataResponse
 import fingerfire.com.valorant.databinding.FragmentWeaponDetailBinding
+import fingerfire.com.valorant.view.adapter.weapons.SkinsAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WeaponDetailFragment : Fragment() {
@@ -43,6 +44,7 @@ class WeaponDetailFragment : Fragment() {
             weaponDetailDataResponse.let { item ->
                 binding.weaponIconImageView.load(item.displayIcon)
                 binding.weaponNameTextView.text = item.displayName
+                binding.rvSkins.adapter = SkinsAdapter(item.skins)
 
 
                 if (item.displayName != "Confronto") {

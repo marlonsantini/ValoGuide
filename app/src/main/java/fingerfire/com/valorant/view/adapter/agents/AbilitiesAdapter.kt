@@ -19,7 +19,7 @@ class AbilitiesAdapter(
     }
 
     override fun onBindViewHolder(holder: AbilitiesViewHolder, position: Int) {
-        with(holder){
+        with(holder) {
             with(abilitiesList[position]) {
                 binding.abilityTitleTextView.text = displayName
                 binding.abilityImageView.load(displayIcon)
@@ -33,5 +33,6 @@ class AbilitiesAdapter(
         return abilitiesList.size
     }
 
-    class AbilitiesViewHolder(val binding: ItemAbilitiesBinding) : RecyclerView.ViewHolder(binding.root)
+    class AbilitiesViewHolder(val binding: ItemAbilitiesBinding) :
+        RecyclerView.ViewHolder(binding.root)
 }
