@@ -75,7 +75,7 @@
 
         <TextView
             android:id="@+id/descriptionTitleTextView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:fontFamily="@font/alata"
@@ -89,9 +89,19 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/agentInfoContainer" />
+
+        <ImageView
+            android:id="@+id/ivVoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:paddingHorizontal="16dp"
+            android:src="@drawable/ic_sound"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/agentInfoContainer"
+            android:contentDescription="@string/app_name" />
 
         <TextView
             android:id="@+id/tvDesc"
@@ -143,9 +153,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/specialAbilityTextView"
-            tools:itemCount="4"
-            tools:listitem="@layout/item_abilities" />
+            app:layout_constraintTop_toBottomOf="@+id/specialAbilityTextView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

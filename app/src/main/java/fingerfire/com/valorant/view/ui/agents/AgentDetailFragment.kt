@@ -1,5 +1,6 @@
 package fingerfire.com.valorant.view.ui.agents
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -49,8 +50,19 @@ class AgentDetailFragment : Fragment() {
                 tvRole.text = item.role.displayName
                 binding.tvDesc.text = item.description
                 binding.rvAbilities.adapter = AbilitiesAdapter(item.abilities)
+
+                binding.ivVoice.setOnClickListener {
+                    startVoice(item.voiceLine.mediaList[0].wave)
+                }
             }
         }
+    }
+
+    private fun startVoice(wav: String) {
+        val mediaPlayer = MediaPlayer()
+        mediaPlayer.setDataSource(wav)
+        mediaPlayer.prepare()
+        mediaPlayer.start()
     }
 
     private fun initAgentDetailObserve() {
