@@ -1,5 +1,6 @@
 package fingerfire.com.valorant.view.adapter.agents
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +13,8 @@ class AgentsAdapter(
     private val itemClick: (AgentDataResponse) -> Unit
 ) : RecyclerView.Adapter<AgentsAdapter.AgentViewHolder>() {
 
+    private var _agentList = agentList.toMutableList()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AgentViewHolder {
         return AgentViewHolder(
             ItemAgentBinding
@@ -21,7 +24,7 @@ class AgentsAdapter(
 
     override fun onBindViewHolder(holder: AgentViewHolder, position: Int) {
         with(holder) {
-            with(agentList[position]) {
+            with(_agentList[position]) {
                 binding.tvAgent.text = displayName
                 binding.imAgent.load(fullPortrait) {
                     crossfade(true)
@@ -33,14 +36,26 @@ class AgentsAdapter(
                 binding.tvRoleName.text = role.displayName
 
                 binding.cvAgents.setOnClickListener {
-                    itemClick.invoke(agentList[position])
+                    itemClick.invoke(_agentList[position])
                 }
             }
         }
     }
 
     override fun getItemCount(): Int {
-        return agentList.size
+        return _agentList.size
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun search(query: String): Boolean {
+        _agentList.clear()
+
+        _agentList.addAll(agentList.filter {
+            it.displayName.contains(query, true)
+        })
+        notifyDataSetChanged()
+
+        return _agentList.isEmpty()
     }
 
     class AgentViewHolder(val binding: ItemAgentBinding) : RecyclerView.ViewHolder(binding.root)

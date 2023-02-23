@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,7 +16,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class AgentFragment : Fragment(R.layout.fragment_agent) {
 
     private lateinit var binding: FragmentAgentBinding
-    private lateinit var agentsAdapter : AgentsAdapter
+    private lateinit var agentsAdapter: AgentsAdapter
     private val viewModel: AgentViewModel by viewModel()
 
     override fun onCreateView(
@@ -37,24 +38,41 @@ class AgentFragment : Fragment(R.layout.fragment_agent) {
         viewModel.agentsLiveData.observe(viewLifecycleOwner) {
             initRecyclerView()
             initAdapter()
+            initSearchView()
         }
     }
 
+    private fun initSearchView() {
+        binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(query: String): Boolean {
+                agentsAdapter.search(query)
+                return true
+            }
+        })
+    }
+
     private fun initRecyclerView() {
-        binding.rvAgents.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvAgents.layoutManager =
+            LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         binding.rvAgents.setHasFixedSize(true)
     }
 
-    private fun initAdapter(){
+    private fun initAdapter() {
         viewModel.agentsLiveData.value?.let { it ->
             agentsAdapter = AgentsAdapter(it.agents, itemClick = {
-                it.uuid.let { uuid->
-                    findNavController().navigate(AgentFragmentDirections.actionAgentsFragmentToAgentDetailFragment(uuid))
+                it.uuid.let { uuid ->
+                    findNavController().navigate(
+                        AgentFragmentDirections.actionAgentsFragmentToAgentDetailFragment(
+                            uuid
+                        )
+                    )
                 }
             })
             binding.rvAgents.adapter = agentsAdapter
         }
     }
-
-
 }
