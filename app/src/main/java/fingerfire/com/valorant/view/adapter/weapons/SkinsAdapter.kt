@@ -22,14 +22,9 @@ class SkinsAdapter(
     override fun onBindViewHolder(holder: SkinsViewHolder, position: Int) {
         with(holder) {
             with(skinsList[position]) {
-                if(displayIcon != null) {
-                    binding.skinImageView.load(displayIcon)
-                    binding.skinNameTextView.text = displayName
-                } else {
-//                    skinsList.removeAt(position)
-//                    notifyItemRemoved(position)
-//                    notifyItemRangeChanged(position, skinsList.size)
-                }
+                skinsList.removeIf { it.displayIcon.isNullOrEmpty() || it.contentTierUuid.isNullOrEmpty() }
+                binding.skinImageView.load(displayIcon)
+                binding.skinNameTextView.text = displayName
             }
         }
     }

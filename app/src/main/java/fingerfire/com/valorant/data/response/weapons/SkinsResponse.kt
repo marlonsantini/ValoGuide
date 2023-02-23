@@ -6,5 +6,7 @@ data class SkinsResponse(
     @Json(name = "displayName")
     val displayName: String,
     @Json(name = "displayIcon")
-    val displayIcon: String
+    val displayIcon: String,
+    @Json(name = "contentTierUuid")
+    val contentTierUuid: String
 )
