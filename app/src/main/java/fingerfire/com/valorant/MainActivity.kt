@@ -21,14 +21,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun initNavController(){
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+    private fun initNavController() {
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
         binding.bottomNavigation.setupWithNavController(navController)
         onDestinationChanged(navController)
     }
 
-    private fun onDestinationChanged(navController: NavController){
+    private fun onDestinationChanged(navController: NavController) {
         navController.addOnDestinationChangedListener { _, destination, _ ->
 
             when (destination.id) {
@@ -40,6 +41,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.weaponFragment -> {
                     binding.bottomNavigation.visibility = View.VISIBLE
+                }
+                R.id.settingsFragment -> {
+                    //binding.bottomNavigation.visibility = View.VISIBLE
                 }
                 else -> {
                     binding.bottomNavigation.visibility = View.GONE

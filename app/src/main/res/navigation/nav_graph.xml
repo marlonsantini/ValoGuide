@@ -4,6 +4,11 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/nav_agents">
 
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="fingerfire.com.valorant.view.ui.SettingsFragment"
+        android:label="Settings" />
+
     <include app:graph="@navigation/nav_agents" />
     <include app:graph="@navigation/nav_maps" />
     <include app:graph="@navigation/nav_weapons" />

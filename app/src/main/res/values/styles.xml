@@ -3,7 +3,7 @@
 
     <!-- Customize your BottomNavigationView here. -->
     <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
-        <item name="fontFamily">@font/alata</item>
+<!--        <item name="fontFamily">@font/alata</item>-->
         <item name="android:textSize">27sp</item>
     </style>
 

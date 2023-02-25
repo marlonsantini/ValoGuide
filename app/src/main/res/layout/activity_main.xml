@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_background"
+    android:background="@color/dark_blue"
     tools:context=".MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
@@ -21,14 +21,13 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:background="@color/main_background"
-        android:theme="@style/Widget.BottomNavigationView"
-        app:itemTextAppearanceActive="@style/Widget.BottomNavigationView"
-        app:itemTextAppearanceInactive="@style/Widget.BottomNavigationView"
+        app:itemIconTint="@color/bottom_nav_bar_selector"
         app:itemTextColor="@color/bottom_nav_bar_selector"
-        app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu_nav" />
