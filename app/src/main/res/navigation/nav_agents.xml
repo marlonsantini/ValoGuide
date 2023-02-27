@@ -7,14 +7,14 @@
 
     <fragment
         android:id="@+id/agentFragment"
-        android:name="fingerfire.com.valorant.view.ui.agents.AgentFragment">
+        android:name="fingerfire.com.valorant.features.agents.ui.AgentFragment">
         <action
             android:id="@+id/action_agentsFragment_to_agentDetailFragment"
             app:destination="@id/agentDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/agentDetailFragment"
-        android:name="fingerfire.com.valorant.view.ui.agents.AgentDetailFragment"
+        android:name="fingerfire.com.valorant.features.agents.ui.AgentDetailFragment"
         tools:layout="@layout/fragment_agent_detail">
 
         <argument

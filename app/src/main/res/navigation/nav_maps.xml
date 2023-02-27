@@ -7,14 +7,14 @@
 
     <fragment
         android:id="@+id/mapFragment"
-        android:name="fingerfire.com.valorant.view.ui.maps.MapsFragment">
+        android:name="fingerfire.com.valorant.features.maps.ui.MapsFragment">
         <action
             android:id="@+id/action_mapsFragment_to_mapDetailFragment"
             app:destination="@id/mapDetailFragment"/>
     </fragment>
     <fragment
         android:id="@+id/mapDetailFragment"
-        android:name="fingerfire.com.valorant.view.ui.maps.MapDetailFragment"
+        android:name="fingerfire.com.valorant.features.maps.ui.MapDetailFragment"
         tools:layout="@layout/fragment_map_detail">
 
         <argument

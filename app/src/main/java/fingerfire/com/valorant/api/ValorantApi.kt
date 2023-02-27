@@ -1,12 +1,11 @@
 package fingerfire.com.valorant.api
 
-import fingerfire.com.valorant.data.response.*
-import fingerfire.com.valorant.data.response.agents.AgentDetailResponse
-import fingerfire.com.valorant.data.response.agents.AgentResponse
-import fingerfire.com.valorant.data.response.maps.MapDetailResponse
-import fingerfire.com.valorant.data.response.maps.MapResponse
-import fingerfire.com.valorant.data.response.weapons.WeaponDetailResponse
-import fingerfire.com.valorant.data.response.weapons.WeaponResponse
+import fingerfire.com.valorant.features.agents.data.response.AgentDetailResponse
+import fingerfire.com.valorant.features.agents.data.response.AgentResponse
+import fingerfire.com.valorant.features.maps.data.response.MapDetailResponse
+import fingerfire.com.valorant.features.maps.data.response.MapResponse
+import fingerfire.com.valorant.features.weapons.data.response.WeaponDetailResponse
+import fingerfire.com.valorant.features.weapons.data.response.WeaponResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
