@@ -11,6 +11,6 @@ class AgentsRepository(private val valorantApi: ValorantApi) {
     }
 
     suspend fun getAgentDetail(agentUuid: String): AgentDetailResponse {
-        return valorantApi.getAgentsUuid(agentUuid,"pt-BR")
+        return valorantApi.getAgentsUuid(agentUuid, "pt-BR")
     }
 }

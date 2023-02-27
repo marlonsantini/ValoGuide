@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import fingerfire.com.valorant.features.weapons.data.response.WeaponDataResponse
 import fingerfire.com.valorant.databinding.ItemWeaponBinding
+import fingerfire.com.valorant.features.weapons.data.response.WeaponDataResponse
 
 class WeaponsAdapter(
     private var weaponList: List<WeaponDataResponse>,

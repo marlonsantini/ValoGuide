@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import fingerfire.com.valorant.features.maps.data.response.MapDataResponse
 import fingerfire.com.valorant.databinding.ItemMapBinding
+import fingerfire.com.valorant.features.maps.data.response.MapDataResponse
 
 class MapsAdapter(
     private var mapList: List<MapDataResponse>,

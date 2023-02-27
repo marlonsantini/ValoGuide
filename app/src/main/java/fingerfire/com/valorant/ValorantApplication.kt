@@ -1,7 +1,8 @@
 package fingerfire.com.valorant
 
 import android.app.Application
-import fingerfire.com.valorant.di.*
+import fingerfire.com.valorant.di.ApiModules
+import fingerfire.com.valorant.di.NetworkModules
 import fingerfire.com.valorant.features.agents.di.AgentsDataModules
 import fingerfire.com.valorant.features.agents.di.AgentsUiModules
 import fingerfire.com.valorant.features.maps.di.MapsDataModules

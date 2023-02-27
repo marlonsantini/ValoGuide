@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import fingerfire.com.valorant.features.weapons.data.response.WeaponDetailResponse
 import fingerfire.com.valorant.features.weapons.data.repository.WeaponsRepository
+import fingerfire.com.valorant.features.weapons.data.response.WeaponDetailResponse
 import kotlinx.coroutines.launch
 
 class WeaponDetailViewModel(private val weaponsRepository: WeaponsRepository) : ViewModel() {

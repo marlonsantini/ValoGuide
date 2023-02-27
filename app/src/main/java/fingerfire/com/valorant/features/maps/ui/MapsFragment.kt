@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import fingerfire.com.valorant.databinding.FragmentMapsBinding
+import fingerfire.com.valorant.features.maps.data.response.MapResponse
 import fingerfire.com.valorant.features.maps.ui.adapter.MapsAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -35,7 +36,7 @@ class MapsFragment : Fragment() {
     private fun observerAgents() {
         viewModel.mapsLiveData.observe(viewLifecycleOwner) {
             initRecyclerView()
-            initAdapter()
+            initAdapter(it)
         }
     }
 
@@ -45,19 +46,16 @@ class MapsFragment : Fragment() {
         binding.rvMaps.setHasFixedSize(true)
     }
 
-    private fun initAdapter() {
-        viewModel.mapsLiveData.value?.let { it ->
-            mapsAdapter = MapsAdapter(it.maps, itemClick = {
-                it.uuid.let { uuid ->
-                    findNavController().navigate(
-                        MapsFragmentDirections.actionMapsFragmentToMapDetailFragment(
-                            uuid
-                        )
+    private fun initAdapter(mapResponse: MapResponse) {
+        mapsAdapter = MapsAdapter(mapResponse.maps, itemClick = {
+            it.uuid.let { uuid ->
+                findNavController().navigate(
+                    MapsFragmentDirections.actionMapsFragmentToMapDetailFragment(
+                        uuid
                     )
-                }
-            })
-            binding.rvMaps.adapter = mapsAdapter
-        }
+                )
+            }
+        })
+        binding.rvMaps.adapter = mapsAdapter
     }
-
 }

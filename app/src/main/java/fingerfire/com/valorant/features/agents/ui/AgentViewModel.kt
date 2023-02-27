@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import fingerfire.com.valorant.features.agents.data.response.AgentResponse
 import fingerfire.com.valorant.features.agents.data.repository.AgentsRepository
+import fingerfire.com.valorant.features.agents.data.response.AgentResponse
 import kotlinx.coroutines.launch
 
 class AgentViewModel(private val agentsRepository: AgentsRepository) : ViewModel() {

@@ -11,6 +11,6 @@ class WeaponsRepository(private val valorantApi: ValorantApi) {
     }
 
     suspend fun getWeaponDetail(weaponUuid: String): WeaponDetailResponse {
-        return valorantApi.getWeaponsUuid(weaponUuid,"pt-BR")
+        return valorantApi.getWeaponsUuid(weaponUuid, "pt-BR")
     }
 }

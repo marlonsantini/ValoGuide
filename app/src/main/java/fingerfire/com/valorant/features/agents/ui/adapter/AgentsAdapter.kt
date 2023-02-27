@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import fingerfire.com.valorant.features.agents.data.response.AgentDataResponse
 import fingerfire.com.valorant.databinding.ItemAgentBinding
+import fingerfire.com.valorant.features.agents.data.response.AgentDataResponse
 
 class AgentsAdapter(
     private var agentList: List<AgentDataResponse>,

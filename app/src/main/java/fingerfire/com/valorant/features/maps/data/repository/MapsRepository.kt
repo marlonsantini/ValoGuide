@@ -11,6 +11,6 @@ class MapsRepository(private val valorantApi: ValorantApi) {
     }
 
     suspend fun getMapDetail(mapUuid: String): MapDetailResponse {
-        return valorantApi.getMapsUuid(mapUuid,"pt-BR")
+        return valorantApi.getMapsUuid(mapUuid, "pt-BR")
     }
 }

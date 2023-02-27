@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import fingerfire.com.valorant.R
-import fingerfire.com.valorant.features.agents.data.response.AgentResponse
 import fingerfire.com.valorant.databinding.FragmentAgentBinding
+import fingerfire.com.valorant.features.agents.data.response.AgentResponse
 import fingerfire.com.valorant.features.agents.ui.adapter.AgentsAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

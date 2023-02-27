@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import fingerfire.com.valorant.features.agents.data.response.AbilitiesResponse
 import fingerfire.com.valorant.databinding.ItemAbilitiesBinding
+import fingerfire.com.valorant.features.agents.data.response.AbilitiesResponse
 
 class AbilitiesAdapter(
     private val abilitiesList: List<AbilitiesResponse>

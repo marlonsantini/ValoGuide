@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import fingerfire.com.valorant.features.weapons.data.response.SkinsResponse
 import fingerfire.com.valorant.databinding.ItemWeaponSkinBinding
+import fingerfire.com.valorant.features.weapons.data.response.SkinsResponse
 
 
 class SkinsAdapter(
