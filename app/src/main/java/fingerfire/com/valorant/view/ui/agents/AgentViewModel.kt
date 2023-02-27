@@ -13,7 +13,6 @@ class AgentViewModel(private val agentsRepository: ValorantRepository) : ViewMod
     private val agentsMutableLiveData: MutableLiveData<AgentResponse> =
         MutableLiveData<AgentResponse>()
     val agentsLiveData: LiveData<AgentResponse>
-        //uso do get
         get() {
             return agentsMutableLiveData
         }

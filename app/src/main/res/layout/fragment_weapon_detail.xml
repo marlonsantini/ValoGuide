@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/main_more_black">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:background="@color/dark_blue">
+        android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/weaponInfoContainer"
@@ -19,8 +19,9 @@
                 android:id="@+id/weaponIconImageView"
                 android:layout_width="match_parent"
                 android:layout_height="320dp"
-                android:background="@color/text_grey"
+                android:background="@color/light_blue"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearanceOverlay="@style/ImageView.Corner" />
@@ -40,7 +41,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alata"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="35sp"
@@ -56,7 +56,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 android:background="@drawable/rounded_corner"
-                android:fontFamily="@font/alata"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="3dp"
                 android:textColor="@color/main_red"
@@ -80,7 +79,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:fontFamily="@font/alata"
                 android:paddingHorizontal="16dp"
                 android:shadowColor="@color/text_grey"
                 android:shadowDx="1"
@@ -100,7 +98,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:fontFamily="@font/alata"
                 android:text="Cabeça"
                 android:textAlignment="center"
                 android:textColor="@color/main_red"
@@ -132,7 +129,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:fontFamily="@font/alata"
                 android:text="Corpo"
                 android:textAlignment="center"
                 android:textColor="@color/main_red"
@@ -162,7 +158,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:fontFamily="@font/alata"
                 android:text="Pernas"
                 android:textAlignment="center"
                 android:textColor="@color/main_red"
@@ -194,7 +189,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:fontFamily="@font/alata"
             android:paddingHorizontal="16dp"
             android:shadowColor="@color/text_grey"
             android:shadowDx="1"

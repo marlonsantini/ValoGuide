@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import fingerfire.com.valorant.R
+import fingerfire.com.valorant.data.response.agents.AgentResponse
 import fingerfire.com.valorant.databinding.FragmentAgentBinding
 import fingerfire.com.valorant.view.adapter.agents.AgentsAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -37,7 +38,7 @@ class AgentFragment : Fragment(R.layout.fragment_agent) {
     private fun observerAgents() {
         viewModel.agentsLiveData.observe(viewLifecycleOwner) {
             initRecyclerView()
-            initAdapter()
+            initAdapter(it)
             initSearchView()
         }
     }
@@ -61,18 +62,16 @@ class AgentFragment : Fragment(R.layout.fragment_agent) {
         binding.rvAgents.setHasFixedSize(true)
     }
 
-    private fun initAdapter() {
-        viewModel.agentsLiveData.value?.let { it ->
-            agentsAdapter = AgentsAdapter(it.agents, itemClick = {
-                it.uuid.let { uuid ->
-                    findNavController().navigate(
-                        AgentFragmentDirections.actionAgentsFragmentToAgentDetailFragment(
-                            uuid
-                        )
+    private fun initAdapter(agentResponse: AgentResponse) {
+        agentsAdapter = AgentsAdapter(agentResponse.agents, itemClick = {
+            it.uuid.let { uuid ->
+                findNavController().navigate(
+                    AgentFragmentDirections.actionAgentsFragmentToAgentDetailFragment(
+                        uuid
                     )
-                }
-            })
-            binding.rvAgents.adapter = agentsAdapter
-        }
+                )
+            }
+        })
+        binding.rvAgents.adapter = agentsAdapter
     }
 }

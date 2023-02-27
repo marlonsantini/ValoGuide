@@ -49,7 +49,6 @@ class AgentsAdapter(
     @SuppressLint("NotifyDataSetChanged")
     fun search(query: String): Boolean {
         _agentList.clear()
-
         _agentList.addAll(agentList.filter {
             it.displayName.contains(query, true)
         })
