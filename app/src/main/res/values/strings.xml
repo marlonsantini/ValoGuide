@@ -9,4 +9,8 @@
     <string name="skins">// Skins</string>
     <string name="title_agents">Escolha Seu <font color="#FF4457">Agente</font> Favorito</string>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="initiator">Iniciador</string>
+    <string name="duelist">Duelista</string>
+    <string name="sentinel">Sentinela</string>
+    <string name="controller">Controlador</string>
 </resources>

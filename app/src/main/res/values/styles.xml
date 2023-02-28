@@ -20,4 +20,12 @@
         <item name="cornerSizeBottomLeft">32dp</item>
         <item name="cornerFamily">rounded</item>
     </style>
+
+    <style name="Chip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipIconVisible">true</item>
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="rippleColor">@color/red_alpha</item>
+        <item name="chipBackgroundColor">@color/chip_background</item>
+        <item name="chipIconTint">@color/chip_icon_color</item>
+    </style>
 </resources>

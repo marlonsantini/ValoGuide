@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,6 +41,7 @@ class AgentFragment : Fragment(R.layout.fragment_agent) {
             initRecyclerView()
             initAdapter(it)
             initSearchView()
+            initChipGroup()
         }
     }
 
@@ -74,4 +76,29 @@ class AgentFragment : Fragment(R.layout.fragment_agent) {
         })
         binding.rvAgents.adapter = agentsAdapter
     }
+
+    private fun initChipGroup() {
+        binding.chip1.setOnClickListener {
+            Toast
+                .makeText(activity, "Removed 1st Chip", Toast.LENGTH_SHORT)
+                .show()
+        }
+
+        binding.chip2.setOnClickListener {
+            Toast
+                .makeText(activity, "Removed 2nd Chip", Toast.LENGTH_SHORT)
+                .show()
+        }
+        binding.chip3.setOnClickListener {
+            Toast
+                .makeText(activity, "Removed 3rd Chip", Toast.LENGTH_SHORT)
+                .show()
+        }
+        binding.chip4.setOnClickListener {
+            Toast
+                .makeText(activity, "Removed 4th Chip", Toast.LENGTH_SHORT)
+                .show()
+        }
+    }
+
 }
