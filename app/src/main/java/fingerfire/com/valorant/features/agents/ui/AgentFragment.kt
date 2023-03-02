@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SearchView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,22 +38,8 @@ class AgentFragment : Fragment(R.layout.fragment_agent) {
         viewModel.agentsLiveData.observe(viewLifecycleOwner) {
             initRecyclerView()
             initAdapter(it)
-            initSearchView()
             initChipGroup()
         }
-    }
-
-    private fun initSearchView() {
-        binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String): Boolean {
-                return false
-            }
-
-            override fun onQueryTextChange(query: String): Boolean {
-                agentsAdapter.search(query)
-                return true
-            }
-        })
     }
 
     private fun initRecyclerView() {
@@ -78,27 +62,37 @@ class AgentFragment : Fragment(R.layout.fragment_agent) {
     }
 
     private fun initChipGroup() {
-        binding.chip1.setOnClickListener {
-            Toast
-                .makeText(activity, "Removed 1st Chip", Toast.LENGTH_SHORT)
-                .show()
+        binding.chipGroup.clearCheck()
+        binding.chip1.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                agentsAdapter.filter(binding.chip1.text.toString())
+            } else {
+                agentsAdapter.filter("")
+            }
         }
 
-        binding.chip2.setOnClickListener {
-            Toast
-                .makeText(activity, "Removed 2nd Chip", Toast.LENGTH_SHORT)
-                .show()
+        binding.chip2.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                agentsAdapter.filter(binding.chip2.text.toString())
+            } else {
+                agentsAdapter.filter("")
+            }
         }
-        binding.chip3.setOnClickListener {
-            Toast
-                .makeText(activity, "Removed 3rd Chip", Toast.LENGTH_SHORT)
-                .show()
+
+        binding.chip3.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                agentsAdapter.filter(binding.chip3.text.toString())
+            } else {
+                agentsAdapter.filter("")
+            }
         }
-        binding.chip4.setOnClickListener {
-            Toast
-                .makeText(activity, "Removed 4th Chip", Toast.LENGTH_SHORT)
-                .show()
+
+        binding.chip4.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                agentsAdapter.filter(binding.chip4.text.toString())
+            } else {
+                agentsAdapter.filter("")
+            }
         }
     }
-
 }

@@ -1,5 +1,6 @@
 package fingerfire.com.valorant.features.weapons.ui.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +13,8 @@ class WeaponsAdapter(
     private val itemClick: (WeaponDataResponse) -> Unit
 ) : RecyclerView.Adapter<WeaponsAdapter.WeaponViewHolder>() {
 
+    private var _weaponList = weaponList.toMutableList()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeaponViewHolder {
         return WeaponViewHolder(
             ItemWeaponBinding
@@ -21,7 +24,7 @@ class WeaponsAdapter(
 
     override fun onBindViewHolder(holder: WeaponViewHolder, position: Int) {
         with(holder) {
-            with(weaponList[position]) {
+            with(_weaponList[position]) {
                 binding.tvWeapon.text = displayName
                 binding.ivWeapon.load(displayIcon) {
                     crossfade(true)
@@ -29,14 +32,25 @@ class WeaponsAdapter(
                 }
 
                 binding.cvWeapons.setOnClickListener {
-                    itemClick.invoke(weaponList[position])
+                    itemClick.invoke(_weaponList[position])
                 }
             }
         }
     }
 
     override fun getItemCount(): Int {
-        return weaponList.size
+        return _weaponList.size
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun search(query: String): Boolean {
+        _weaponList.clear()
+        _weaponList.addAll(weaponList.filter {
+            it.displayName.contains(query, true)
+        })
+        notifyDataSetChanged()
+
+        return _weaponList.isEmpty()
     }
 
     class WeaponViewHolder(val binding: ItemWeaponBinding) : RecyclerView.ViewHolder(binding.root)

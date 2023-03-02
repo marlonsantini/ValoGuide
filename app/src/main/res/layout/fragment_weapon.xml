@@ -1,15 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_more_black"
     tools:context=".features.weapons.ui.WeaponFragment">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <SearchView
+            android:id="@+id/search_weapon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_red"
+            android:closeIcon="@drawable/ic_close"
+            android:searchHintIcon="@drawable/ic_search"
+            android:searchIcon="@drawable/ic_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.cardview.widget.CardView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvWeapon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" />
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvSearch" />
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

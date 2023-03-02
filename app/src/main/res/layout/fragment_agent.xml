@@ -54,9 +54,9 @@
             android:id="@+id/horizon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clipToPadding="false"
             android:padding="10dp"
             android:scrollbars="none"
-            android:clipToPadding="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CLayout">
@@ -67,7 +67,8 @@
                 android:layout_height="match_parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/CLayout">
+                app:layout_constraintTop_toBottomOf="@+id/CLayout"
+                app:singleSelection="true">
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_3"
@@ -83,8 +84,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/controller"
-                    app:chipIconVisible="true"
-                    app:chipIcon="@drawable/ic_controller" />
+                    app:chipIcon="@drawable/ic_controller"
+                    app:chipIconVisible="true" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_1"
@@ -104,16 +105,6 @@
                     tools:ignore="TouchTargetSizeCheck" />
             </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>
-
-        <SearchView
-            android:id="@+id/search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/main_red"
-            android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@+id/CLayout" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvAgents"
