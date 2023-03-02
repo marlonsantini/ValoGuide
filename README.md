@@ -8,7 +8,9 @@
   <a href="https://developer.android.com/kotlin/coroutines"><img alt="Coroutines" src="https://img.shields.io/badge/Coroutines-Asynchronous-red"/></a>
 </p>
 
-![UI](https://github.com/marlonsantini/Valorant/blob/master/screenshots/agentsScreen.png)
+<p align="center">
+  <img src="https://github.com/marlonsantini/Valorant/blob/master/screenshots/agentsScreen.png" width="300"><br>
+</p>
 
 <p align="center">
 A sample android app consuming Valorant API to display valorant agents, maps and weapons, it has been built with Architecture Components and MVVM pattern.
