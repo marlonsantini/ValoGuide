@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import fingerfire.com.valorant.R
+import androidx.recyclerview.widget.PagerSnapHelper
 import fingerfire.com.valorant.databinding.FragmentAgentBinding
 import fingerfire.com.valorant.features.agents.data.response.AgentResponse
 import fingerfire.com.valorant.features.agents.ui.adapter.AgentsAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class AgentFragment : Fragment(R.layout.fragment_agent) {
+
+class AgentFragment : Fragment() {
 
     private lateinit var binding: FragmentAgentBinding
     private lateinit var agentsAdapter: AgentsAdapter
@@ -36,16 +37,22 @@ class AgentFragment : Fragment(R.layout.fragment_agent) {
 
     private fun observerAgents() {
         viewModel.agentsLiveData.observe(viewLifecycleOwner) {
-            initRecyclerView()
+            initRecyclerView(it)
             initAdapter(it)
             initChipGroup()
         }
     }
 
-    private fun initRecyclerView() {
+    private fun initRecyclerView(agentResponse: AgentResponse) {
+        val pagerSnapHelper = PagerSnapHelper()
         binding.rvAgents.layoutManager =
             LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         binding.rvAgents.setHasFixedSize(true)
+        binding.rvAgents.onFlingListener = null
+        pagerSnapHelper.attachToRecyclerView(binding.rvAgents)
+        binding.indicator.attachToRecyclerView(binding.rvAgents, pagerSnapHelper)
+        binding.indicator.createIndicators(agentResponse.agents.size, 0)
+
     }
 
     private fun initAdapter(agentResponse: AgentResponse) {
@@ -66,32 +73,40 @@ class AgentFragment : Fragment(R.layout.fragment_agent) {
         binding.chip1.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 agentsAdapter.filter(binding.chip1.text.toString())
+                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
             } else {
                 agentsAdapter.filter("")
+                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
             }
         }
 
         binding.chip2.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 agentsAdapter.filter(binding.chip2.text.toString())
+                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
             } else {
                 agentsAdapter.filter("")
+                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
             }
         }
 
         binding.chip3.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 agentsAdapter.filter(binding.chip3.text.toString())
+                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
             } else {
                 agentsAdapter.filter("")
+                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
             }
         }
 
         binding.chip4.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 agentsAdapter.filter(binding.chip4.text.toString())
+                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
             } else {
                 agentsAdapter.filter("")
+                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
             }
         }
     }
