@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">กล้าหาญ</string>
+    <string name="agents">ตัวแทน</string>
+    <string name="maps">แผนที่</string>
+    <string name="arsenal">อาร์เซนอล</string>
+    <string name="biography">// ชีวประวัติ</string>
+    <string name="special_abilities">// ความสามารถพิเศษ</string>
+    <string name="damage_range">// ความเสียหาย</string>
+    <string name="skins">// สกิน</string>
+    <string name="title_agents">เลือก <font color="#FF4457">ตัวแทน</font> ที่คุณชื่นชอบ</string>
+    <string name="initiator">ผู้ริเริ่ม</string>
+    <string name="duelist">ดูเอลลิสต์</string>
+    <string name="sentinel">ยาม</string>
+    <string name="controller">ตัวควบคุม</string>
+</resources>

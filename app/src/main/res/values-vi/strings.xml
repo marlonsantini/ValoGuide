@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Giá trị</string>
+    <string name="agents">Đại lý</string>
+    <string name="maps">Bản đồ</string>
+    <string name="arsenal">Arsenal</string>
+    <string name="biography">// Tiểu sử</string>
+    <string name="special_abilities">// Khả năng đặc biệt</string>
+    <string name="damage_range">// Thiệt hại</string>
+    <string name="skins">// Skins</string>
+    <string name="title_agents">Chọn <font color="#FF4457">Đại lý</font> Ưa thích</string> của bạn
+    <string name="initiator">Người khởi tạo</string>
+    <string name="duelist">Người đấu tay đôi</string>
+    <string name="sentinel">Sentinel</string>
+    <string name="controller">Bộ điều khiển</string>
+</resources>

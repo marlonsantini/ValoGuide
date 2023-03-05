@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">バロラント</string>
+    <string name="agents">エージェント</string>
+    <string name="maps">マップ</string>
+    <string name="arsenal">アーセナル</string>
+    <string name="biography">// 略歴</string>
+    <string name="special_abilities">// 特殊能力</string>
+    <string name="damage_range">// ダメージ</string>
+    <string name="skins">// スキン</string>
+    <string name="title_agents">あなたの<font color="#FF4457">エージェント</font>のお気に入りを選んでください</string>
+    <string name="initiator">イニシエーター</string>
+    <string name="duelist">デュエリスト</string>
+    <string name="sentinel">センチネル</string>
+    <string name="controller">コントローラー</string>
+</resources>

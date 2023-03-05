@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Valorant</string>
+    <string name="agents">Agen</string>
+    <string name="maps">Peta</string>
+    <string name="arsenal">Arsenal</string>
+    <string name="biography">// Biografi</string>
+    <string name="special_abilities">// Kemampuan Khusus</string>
+    <string name="damage_range">// Kerusakan</string>
+    <string name="skins">// Skins</string>
+    <string name="title_agents">Pilih <font color="#FF4457">Agen</font> Favorit Anda</string>
+    <string name="initiator">Inisiator</string>
+    <string name="duelist">Duel</string>
+    <string name="sentinel">Sentinel</string>
+    <string name="controller">Pengontrol</string>
+</resources>

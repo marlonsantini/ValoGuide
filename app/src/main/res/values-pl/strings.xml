@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Valorant</string>
+    <string name="agents">Agenci</string>
+    <string name="maps">Mapy</string>
+    <string name="arsenal">Arsenał</string>
+    <string name="biography">// Biografia</string>
+    <string name="special_abilities">// Specjalne zdolności</string>
+    <string name="damage_range">// Obrażenia</string>
+    <string name="skins">// Skórki</string>
+    <string name="title_agents">Wybierz ulubionego <font color="#FF4457">agenta</font></string>
+    <string name="initiator">Inicjator</string>
+    <string name="duelist">Pojedynek</string>
+    <string name="sentinel">Strażnik</string>
+    <string name="controller">Kontroler</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Valorant</string>
+    <string name="agents">Agents</string>
+    <string name="maps">Maps</string>
+    <string name="arsenal">Arsenal</string>
+    <string name="biography">// Biography</string>
+    <string name="special_abilities">// Special skills</string>
+    <string name="damage_range">// Damage</string>
+    <string name="skins">// Skins</string>
+    <string name="title_agents">Choose Yours Favorite<font color="#FF4457">Agent</font></string>
+    <string name="initiator">Initiador</string>
+    <string name="duelist">Duelist</string>
+    <string name="sentinel">Sentinel</string>
+    <string name="controller">Controller</string>
+</resources>

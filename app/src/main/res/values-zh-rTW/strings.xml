@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">英勇</string>
+    <string name="agents">代理</string>
+    <string name="maps">地圖</string>
+    <string name="arsenal">阿森納</string>
+    <string name="biography">// 傳記</string>
+    <string name="special_abilities">// 特殊能力</string>
+    <string name="damage_range">// 傷害</string>
+    <string name="skins">// 皮膚</string>
+    <string name="title_agents">選擇您的<font color="#FF4457">代理</font>收藏夾</string>
+    <string name="initiator">發起者</string>
+    <string name="duelist">決鬥者</string>
+    <string name="sentinel">哨兵</string>
+    <string name="controller">控制器</string>
+</resources>

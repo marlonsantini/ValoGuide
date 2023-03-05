@@ -42,9 +42,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.weaponFragment -> {
                     binding.bottomNavigation.visibility = View.VISIBLE
                 }
-                R.id.settingsFragment -> {
-                    //binding.bottomNavigation.visibility = View.VISIBLE
-                }
                 else -> {
                     binding.bottomNavigation.visibility = View.GONE
                 }

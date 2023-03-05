@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Valorant</string>
+    <string name="agents">Temsilciler</string>
+    <string name="maps">Haritalar</string>
+    <string name="arsenal">Arsenal</string>
+    <string name="biography">// Biyografi</string>
+    <string name="special_abilities">// Özel Yetenekler</string>
+    <string name="damage_range">// Hasar</string>
+    <string name="skins">// Dış Görünümler</string>
+    <string name="title_agents">Favori <font color="#FF4457">Temsilcinizi</font> Seçin</string>
+    <string name="initiator">Başlatıcı</string>
+    <string name="duelist">Düellocu</string>
+    <string name="sentinel">Gözcü</string>
+    <string name="controller">Denetleyici</string>
+</resources>

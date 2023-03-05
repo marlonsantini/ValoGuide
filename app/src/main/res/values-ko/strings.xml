@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">발로란트</string>
+    <string name="agents">에이전트</string>
+    <string name="maps">지도</string>
+    <string name="arsenal">아스날</string>
+    <string name="biography">// 약력</string>
+    <string name="special_abilities">// 특수 능력</string>
+    <string name="damage_range">// 데미지</string>
+    <string name="skins">// 스킨</string>
+    <string name="title_agents"><font color="#FF4457">에이전트</font> 즐겨찾기 선택</string>
+    <string name="initiator">개시자</string>
+    <string name="duelist">듀얼리스트</string>
+    <string name="sentinel">센티넬</string>
+    <string name="controller">컨트롤러</string>
+</resources>

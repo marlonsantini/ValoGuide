@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Валорант</string>
+    <string name="agents">Агенты</string>
+    <string name="maps">Карты</string>
+    <string name="arsenal">Арсенал</string>
+    <string name="biography">// Биография</string>
+    <string name="special_abilities">// Особые способности</string>
+    <string name="damage_range">// Урон</string>
+    <string name="skins">// Скины</string>
+    <string name="title_agents">Выберите своего <font color="#FF4457">агента</font> в избранном</string>
+    <string name="initiator">Инициатор</string>
+    <string name="duelist">Дуэлянт</string>
+    <string name="sentinel">Страж</string>
+    <string name="controller">Контроллер</string>
+</resources>
