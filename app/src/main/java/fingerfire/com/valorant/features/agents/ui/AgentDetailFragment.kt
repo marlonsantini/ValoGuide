@@ -12,6 +12,7 @@ import coil.load
 import fingerfire.com.valorant.databinding.FragmentAgentDetailBinding
 import fingerfire.com.valorant.features.agents.data.response.AgentDataResponse
 import fingerfire.com.valorant.features.agents.ui.adapter.AbilitiesAdapter
+import fingerfire.com.valorant.util.Util
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AgentDetailFragment : Fragment() {
@@ -19,6 +20,8 @@ class AgentDetailFragment : Fragment() {
     private lateinit var binding: FragmentAgentDetailBinding
     private val args: AgentDetailFragmentArgs by navArgs()
     private val viewModel: AgentDetailViewModel by viewModel()
+
+    private val util = Util()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,6 +57,12 @@ class AgentDetailFragment : Fragment() {
                 binding.ivVoice.setOnClickListener {
                     startVoice(item.voiceLine.mediaList[0].wave)
                 }
+
+                val startColor = "#" + item.backgroundGradientColors[0].substring(0,6)
+                val centerColor = "#" + item.backgroundGradientColors[1].substring(0,6)
+                val endColor = "#" + item.backgroundGradientColors[2].substring(0,6)
+                val drawable = util.createGradientDrawable(startColor, centerColor, endColor)
+                binding.agentIconImageView.background = drawable
             }
         }
     }

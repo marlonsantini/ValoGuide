@@ -21,5 +21,7 @@ data class AgentDataResponse(
     @Json(name = "role")
     val role: RoleResponse,
     @Json(name = "voiceLine")
-    val voiceLine: VoiceLineResponse
+    val voiceLine: VoiceLineResponse,
+    @Json(name = "backgroundGradientColors")
+    val backgroundGradientColors: List<String>
 )
