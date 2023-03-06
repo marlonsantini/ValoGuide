@@ -11,6 +11,7 @@ import coil.load
 import fingerfire.com.valorant.databinding.FragmentWeaponDetailBinding
 import fingerfire.com.valorant.features.weapons.data.response.WeaponDetailDataResponse
 import fingerfire.com.valorant.features.weapons.ui.adapter.SkinsAdapter
+import fingerfire.com.valorant.util.Util
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WeaponDetailFragment : Fragment() {
@@ -18,6 +19,8 @@ class WeaponDetailFragment : Fragment() {
     private lateinit var binding: FragmentWeaponDetailBinding
     private val args: WeaponDetailFragmentArgs by navArgs()
     private val viewModel: WeaponDetailViewModel by viewModel()
+
+    private val util = Util()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -60,6 +63,9 @@ class WeaponDetailFragment : Fragment() {
                 } else {
                     binding.damageRangeContainer.visibility = View.GONE
                 }
+
+                val drawable = util.createGradientDrawable("#000000", "#AA9B9B", "#C0ACA6")
+                binding.weaponIconImageView.background = drawable
             }
         }
     }

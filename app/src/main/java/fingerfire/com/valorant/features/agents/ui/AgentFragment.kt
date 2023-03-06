@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
+import androidx.recyclerview.widget.RecyclerView
 import fingerfire.com.valorant.databinding.FragmentAgentBinding
 import fingerfire.com.valorant.features.agents.data.response.AgentResponse
 import fingerfire.com.valorant.features.agents.ui.adapter.AgentsAdapter
@@ -19,6 +20,8 @@ class AgentFragment : Fragment() {
     private lateinit var binding: FragmentAgentBinding
     private lateinit var agentsAdapter: AgentsAdapter
     private val viewModel: AgentViewModel by viewModel()
+
+    private var currentPosition = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,14 +48,25 @@ class AgentFragment : Fragment() {
 
     private fun initRecyclerView(agentResponse: AgentResponse) {
         val pagerSnapHelper = PagerSnapHelper()
+
         binding.rvAgents.layoutManager =
             LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvAgents.scrollToPosition(currentPosition)
         binding.rvAgents.setHasFixedSize(true)
         binding.rvAgents.onFlingListener = null
+
         pagerSnapHelper.attachToRecyclerView(binding.rvAgents)
         binding.indicator.attachToRecyclerView(binding.rvAgents, pagerSnapHelper)
-        binding.indicator.createIndicators(agentResponse.agents.size, 0)
+        binding.indicator.createIndicators(agentResponse.agents.size, currentPosition)
 
+        binding.rvAgents.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                currentPosition = (binding.rvAgents.layoutManager as LinearLayoutManager)
+                    .findFirstVisibleItemPosition()
+            }
+        })
     }
 
     private fun initAdapter(agentResponse: AgentResponse) {
