@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
+import fingerfire.com.valorant.R
 import fingerfire.com.valorant.databinding.FragmentAgentDetailBinding
 import fingerfire.com.valorant.features.agents.data.response.AgentDataResponse
 import fingerfire.com.valorant.features.agents.ui.adapter.AbilitiesAdapter
@@ -58,9 +60,9 @@ class AgentDetailFragment : Fragment() {
                     startVoice(item.voiceLine.mediaList[0].wave)
                 }
 
-                val startColor = "#" + item.backgroundGradientColors[0].substring(0,6)
-                val centerColor = "#" + item.backgroundGradientColors[1].substring(0,6)
-                val endColor = "#" + item.backgroundGradientColors[2].substring(0,6)
+                val startColor = "#" + item.backgroundGradientColors[0].substring(0, 6)
+                val centerColor = "#" + item.backgroundGradientColors[1].substring(0, 6)
+                val endColor = "#" + item.backgroundGradientColors[2].substring(0, 6)
                 val drawable = util.createGradientDrawable(startColor, centerColor, endColor)
                 binding.agentIconImageView.background = drawable
             }
@@ -72,6 +74,10 @@ class AgentDetailFragment : Fragment() {
         mediaPlayer.setDataSource(wav)
         mediaPlayer.prepare()
         mediaPlayer.start()
+        binding.ivVoice.setColorFilter(ContextCompat.getColor(requireContext(), R.color.main_red))
+        mediaPlayer.setOnCompletionListener {
+            binding.ivVoice.setColorFilter(ContextCompat.getColor(requireContext(), R.color.white))
+        }
     }
 
     private fun initAgentDetailObserve() {
