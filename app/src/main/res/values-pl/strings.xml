@@ -13,4 +13,7 @@
     <string name="duelist">Pojedynek</string>
     <string name="sentinel">Strażnik</string>
     <string name="controller">Kontroler</string>
+    <string name="head">Głowa</string>
+    <string name="leg">Nogi</string>
+    <string name="body">Ciało</string>
 </resources>

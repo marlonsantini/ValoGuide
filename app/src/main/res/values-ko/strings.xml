@@ -13,4 +13,7 @@
     <string name="duelist">듀얼리스트</string>
     <string name="sentinel">센티넬</string>
     <string name="controller">컨트롤러</string>
+    <string name="head">머리</string>
+    <string name="leg">다리</string>
+    <string name="body">본문</string>
 </resources>

@@ -13,4 +13,7 @@
     <string name="duelist">Düellocu</string>
     <string name="sentinel">Gözcü</string>
     <string name="controller">Denetleyici</string>
+    <string name="head">Baş</string>
+    <string name="leg">Bacaklar</string>
+    <string name="body">Gövde</string>
 </resources>

@@ -12,4 +12,7 @@
     <string name="duelist">Duelista</string>
     <string name="sentinel">Sentinela</string>
     <string name="controller">Controlador</string>
+    <string name="head">Cabeça</string>
+    <string name="leg">Pernas</string>
+    <string name="body">Corpo</string>
 </resources>

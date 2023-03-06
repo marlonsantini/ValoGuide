@@ -13,4 +13,7 @@
     <string name="duelist">デュエリスト</string>
     <string name="sentinel">センチネル</string>
     <string name="controller">コントローラー</string>
+    <string name="head">頭</string>
+    <string name="leg">脚</string>
+    <string name="body">本文</string>
 </resources>

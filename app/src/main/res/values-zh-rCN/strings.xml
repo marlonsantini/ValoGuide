@@ -13,4 +13,7 @@
     <string name="duelist">决斗者</string>
     <string name="sentinel">哨兵</string>
     <string name="controller">控制器</string>
+    <string name="head">头</string>
+    <string name="leg">腿</string>
+    <string name="body">正文</string>
 </resources>

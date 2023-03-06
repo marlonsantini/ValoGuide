@@ -13,4 +13,7 @@
     <string name="duelist">Дуэлянт</string>
     <string name="sentinel">Страж</string>
     <string name="controller">Контроллер</string>
+    <string name="head">Голова</string>
+    <string name="leg">Ноги</string>
+    <string name="body">Тело</string>
 </resources>

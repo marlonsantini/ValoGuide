@@ -13,4 +13,7 @@
     <string name="duelist">Duelliste</string>
     <string name="sentinel">Sentinelle</string>
     <string name="controller">Contrôleur</string>
+    <string name="head">Chef</string>
+    <string name="leg">Jambes</string>
+    <string name="body">Corps</string>
 </resources>

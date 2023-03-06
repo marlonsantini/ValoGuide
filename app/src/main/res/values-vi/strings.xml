@@ -13,4 +13,7 @@
     <string name="duelist">Người đấu tay đôi</string>
     <string name="sentinel">Sentinel</string>
     <string name="controller">Bộ điều khiển</string>
+    <string name="head">Đầu</string>
+    <string name="leg">Chân</string>
+    <string name="body">Cơ thể</string>
 </resources>

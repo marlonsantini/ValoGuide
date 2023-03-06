@@ -13,4 +13,7 @@
     <string name="duelist">Duelist</string>
     <string name="sentinel">Sentinel</string>
     <string name="controller">Controller</string>
+    <string name="head">Head</string>
+    <string name="leg">Legs</string>
+    <string name="body">Body</string>
 </resources>

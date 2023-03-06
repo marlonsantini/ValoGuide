@@ -13,4 +13,7 @@
     <string name="duelist">ดูเอลลิสต์</string>
     <string name="sentinel">ยาม</string>
     <string name="controller">ตัวควบคุม</string>
+    <string name="head">หัว</string>
+    <string name="leg">ขา</string>
+    <string name="body">เนื้อหา</string>
 </resources>

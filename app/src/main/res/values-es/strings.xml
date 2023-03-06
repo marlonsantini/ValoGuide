@@ -13,4 +13,7 @@
     <string name="duelist">Duelista</string>
     <string name="sentinel">Centinela</string>
     <string name="controller">Controlador</string>
+    <string name="head">Cabeza</string>
+    <string name="leg">Piernas</string>
+    <string name="body">Cuerpo</string>
 </resources>

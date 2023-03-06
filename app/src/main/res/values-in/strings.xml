@@ -13,4 +13,7 @@
     <string name="duelist">Duel</string>
     <string name="sentinel">Sentinel</string>
     <string name="controller">Pengontrol</string>
+    <string name="head">Kepala</string>
+    <string name="leg">Kaki</string>
+    <string name="body">Tubuh</string>
 </resources>
