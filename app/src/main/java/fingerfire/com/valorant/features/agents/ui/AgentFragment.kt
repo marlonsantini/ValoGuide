@@ -84,44 +84,50 @@ class AgentFragment : Fragment() {
 
     private fun initChipGroup() {
         binding.chipGroup.clearCheck()
-        binding.chip1.setOnCheckedChangeListener { _, isChecked ->
+        binding.initiator.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                agentsAdapter.filter(binding.chip1.text.toString())
-                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
+                agentsAdapter.filter(binding.initiator.text.toString())
+                scrollCurrentPositionChip()
             } else {
                 agentsAdapter.filter("")
-                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
+                scrollCurrentPositionChip()
             }
         }
 
-        binding.chip2.setOnCheckedChangeListener { _, isChecked ->
+        binding.controller.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                agentsAdapter.filter(binding.chip2.text.toString())
-                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
+                agentsAdapter.filter(binding.controller.text.toString())
+                scrollCurrentPositionChip()
             } else {
                 agentsAdapter.filter("")
-                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
+                scrollCurrentPositionChip()
             }
         }
 
-        binding.chip3.setOnCheckedChangeListener { _, isChecked ->
+        binding.sentinel.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                agentsAdapter.filter(binding.chip3.text.toString())
-                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
+                agentsAdapter.filter(binding.sentinel.text.toString())
+                scrollCurrentPositionChip()
             } else {
                 agentsAdapter.filter("")
-                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
+                scrollCurrentPositionChip()
             }
         }
 
-        binding.chip4.setOnCheckedChangeListener { _, isChecked ->
+        binding.duelist.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                agentsAdapter.filter(binding.chip4.text.toString())
-                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
+                agentsAdapter.filter(binding.duelist.text.toString())
+                scrollCurrentPositionChip()
             } else {
                 agentsAdapter.filter("")
-                binding.indicator.createIndicators(agentsAdapter.itemCount, 0)
+                scrollCurrentPositionChip()
             }
         }
+    }
+
+    private fun scrollCurrentPositionChip() {
+        currentPosition = 0
+        binding.rvAgents.scrollToPosition(currentPosition)
+        binding.indicator.createIndicators(agentsAdapter.itemCount, currentPosition)
     }
 }

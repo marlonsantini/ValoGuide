@@ -64,7 +64,7 @@
             app:singleSelection="true">
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_3"
+                android:id="@+id/sentinel"
                 style="@style/Chip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
                 app:chipIcon="@drawable/ic_sentinel" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_2"
+                android:id="@+id/controller"
                 style="@style/Chip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
                 app:chipIconVisible="true" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_1"
+                android:id="@+id/initiator"
                 style="@style/Chip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
                 app:chipIcon="@drawable/ic_initiator" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_4"
+                android:id="@+id/duelist"
                 style="@style/Chip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
