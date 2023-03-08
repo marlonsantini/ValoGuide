@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "481812624711",
+    "project_id": "valorant-info",
+    "storage_bucket": "valorant-info.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481812624711:android:e6eac09b1e614434354862",
+        "android_client_info": {
+          "package_name": "fingerfire.com.valorant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481812624711-5s3eilsd5hu925metbpebp806m3u1cd4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fingerfire.com.valorant",
+            "certificate_hash": "c379e25c6e97f4bb67bec19c366ea2a06f358564"
+          }
+        },
+        {
+          "client_id": "481812624711-6cabn2qlu8ebc7ksi7qfb0lqkmceq8ln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6M3waTQmRR8TdQwugYuE3TyVt8jCADk0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "481812624711-6cabn2qlu8ebc7ksi7qfb0lqkmceq8ln.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
