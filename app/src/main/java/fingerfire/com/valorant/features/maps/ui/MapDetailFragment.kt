@@ -55,7 +55,7 @@ class MapDetailFragment : Fragment() {
     private fun initMapDetailObserve() {
         viewModel.mapsDetailLiveData.observe(viewLifecycleOwner) {
             initUi(it.data)
-            initAdMob()
+            //initAdMob()
         }
     }
 

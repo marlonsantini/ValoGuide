@@ -7,6 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import fingerfire.com.valorant.databinding.FragmentMapsBinding
 import fingerfire.com.valorant.features.maps.data.response.MapResponse
 import fingerfire.com.valorant.features.maps.ui.adapter.MapsAdapter
@@ -49,6 +53,7 @@ class MapsFragment : Fragment() {
     private fun initAdapter(mapResponse: MapResponse) {
         mapsAdapter = MapsAdapter(mapResponse.maps, itemClick = {
             it.uuid.let { uuid ->
+                //log()
                 findNavController().navigate(
                     MapsFragmentDirections.actionMapsFragmentToMapDetailFragment(
                         uuid
@@ -57,5 +62,15 @@ class MapsFragment : Fragment() {
             }
         })
         binding.rvMaps.adapter = mapsAdapter
+    }
+
+    private fun log(){
+        val firebaseAnalytics = Firebase.analytics
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_ITEM) {
+             param(FirebaseAnalytics.Param.ITEM_ID, 10)
+             param(FirebaseAnalytics.Param.ITEM_NAME, "camisa")
+        }
+
+        firebaseAnalytics.setUserProperty("favorite_car", "HB20")
     }
 }
