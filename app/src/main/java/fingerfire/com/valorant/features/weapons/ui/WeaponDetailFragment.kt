@@ -10,6 +10,7 @@ import androidx.navigation.fragment.navArgs
 import coil.load
 import fingerfire.com.valorant.databinding.FragmentWeaponDetailBinding
 import fingerfire.com.valorant.features.weapons.data.response.WeaponDetailDataResponse
+import fingerfire.com.valorant.features.weapons.ui.adapter.DamageRangeAdapter
 import fingerfire.com.valorant.features.weapons.ui.adapter.SkinsAdapter
 import fingerfire.com.valorant.util.Util
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -53,12 +54,8 @@ class WeaponDetailFragment : Fragment() {
                 if (item.displayName != "Confronto") {
                     binding.weaponCategoryTextView.text = item.shopData.categoryText
 
-                    binding.headProgressBar.progress =
-                        item.weaponStats.damageRanges[0].headDamage.toInt()
-                    binding.bodyProgressBar.progress =
-                        item.weaponStats.damageRanges[0].bodyDamage.toInt()
-                    binding.legProgressBar.progress =
-                        item.weaponStats.damageRanges[0].legDamage.toInt()
+                    binding.rvDamageRange.adapter =
+                        context?.let { DamageRangeAdapter(item.weaponStats.damageRanges) }
 
                 } else {
                     binding.damageRangeContainer.visibility = View.GONE
