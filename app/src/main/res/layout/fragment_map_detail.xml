@@ -52,4 +52,16 @@
         app:layout_constraintTop_toBottomOf="@+id/mapNameTextView"
         tools:text="45°26'BF'N,12°20'Q'E" />
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-7640890994209260/2622954405"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mapCoordinateTextView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
