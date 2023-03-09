@@ -65,7 +65,7 @@
                 android:background="@drawable/rounded_corner"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="3dp"
-                android:textColor="@color/red_alpha"
+                android:textColor="@color/red"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"

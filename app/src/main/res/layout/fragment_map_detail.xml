@@ -60,7 +60,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:visibility="gone"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-7640890994209260/2622954405"
         app:layout_constraintEnd_toStartOf="parent"
