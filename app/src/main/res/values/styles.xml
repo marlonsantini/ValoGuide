@@ -21,7 +21,6 @@
         <item name="rippleColor">@color/red_alpha</item>
         <item name="chipBackgroundColor">@color/chip_background</item>
         <item name="chipIconTint">@color/chip_icon_color</item>
-        <item name="fontFamily">@font/alata</item>
     </style>
 
     <style name="Font">
