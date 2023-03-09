@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Customize your BottomNavigationView here. -->
-    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
-<!--        <item name="fontFamily">@font/alata</item>-->
-        <item name="android:textSize">27sp</item>
-    </style>
-
     <style name="Divider">
         <item name="android:layout_width">65dp</item>
         <item name="android:layout_height">5dp</item>
@@ -27,5 +21,10 @@
         <item name="rippleColor">@color/red_alpha</item>
         <item name="chipBackgroundColor">@color/chip_background</item>
         <item name="chipIconTint">@color/chip_icon_color</item>
+        <item name="fontFamily">@font/alata</item>
+    </style>
+
+    <style name="Font">
+        <item name="fontFamily">@font/alata</item>
     </style>
 </resources>

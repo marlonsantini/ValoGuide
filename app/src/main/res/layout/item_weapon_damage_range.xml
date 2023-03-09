@@ -24,6 +24,7 @@
 
             <TextView
                 android:id="@+id/tvMeter"
+                style="@style/Font"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -48,6 +49,7 @@
 
             <TextView
                 android:id="@+id/tvHead"
+                style="@style/Font"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -62,6 +64,7 @@
 
             <TextView
                 android:id="@+id/tvBody"
+                style="@style/Font"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -76,6 +79,7 @@
 
             <TextView
                 android:id="@+id/tvLeg"
+                style="@style/Font"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"

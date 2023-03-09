@@ -10,7 +10,7 @@
         android:name="fingerfire.com.valorant.features.maps.ui.MapsFragment">
         <action
             android:id="@+id/action_mapsFragment_to_mapDetailFragment"
-            app:destination="@id/mapDetailFragment"/>
+            app:destination="@id/mapDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapDetailFragment"

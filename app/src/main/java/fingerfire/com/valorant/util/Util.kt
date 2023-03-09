@@ -14,7 +14,11 @@ class Util {
             }
     }
 
-    fun createGradientDrawable(startColor: String, centerColor: String, endColor: String): GradientDrawable {
+    fun createGradientDrawable(
+        startColor: String,
+        centerColor: String,
+        endColor: String
+    ): GradientDrawable {
         val startColorInt = Color.parseColor(startColor)
         val centerColor = Color.parseColor(centerColor)
         val endColorInt = Color.parseColor(endColor)
