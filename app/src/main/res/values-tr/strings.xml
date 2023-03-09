@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Valorant</string>
+    <string name="app_name">Valorant Bilgi</string>
     <string name="agents">Temsilciler</string>
     <string name="maps">Haritalar</string>
     <string name="arsenal">Arsenal</string>

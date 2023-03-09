@@ -71,7 +71,7 @@ class WeaponDetailFragment : Fragment() {
     private fun initWeaponDetailObserve() {
         viewModel.weaponsDetailLiveData.observe(viewLifecycleOwner) {
             initUi(it.data)
-            //initAdMob()
+            initAdMob()
         }
     }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">발로란트</string>
+    <string name="app_name">발로란트 정보</string>
     <string name="agents">에이전트</string>
     <string name="maps">지도</string>
     <string name="arsenal">아스날</string>
