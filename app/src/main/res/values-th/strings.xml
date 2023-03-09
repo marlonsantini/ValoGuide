@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">กล้าหาญ ข้อมูล</string>
+    <string name="app_name">คำแนะนำผู้กล้า</string>
     <string name="agents">ตัวแทน</string>
     <string name="maps">แผนที่</string>
     <string name="arsenal">อาร์เซนอล</string>
