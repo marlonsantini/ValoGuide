@@ -1,4 +1,4 @@
-<h1 align="center"> Valorant Basics </h1>
+<h1 align="center"> Valorant Info </h1>
 
 <p align="center">
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
@@ -21,6 +21,9 @@ A sample android app consuming Valorant API to display valorant agents, maps and
 - [Kotlin](https://kotlinlang.org/)
 - [Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
 - [Koin](https://insert-koin.io) for dependency injection.
+- [Firebase] (https://firebase.google.com/) for Crashlytics and Analytics
+- [Admob] (https://admob.google.com/)
+- [CircleIndicator] (https://github.com/ongakuer/CircleIndicator) A lightweight indicator lists
 - [JetPack](https://developer.android.com/jetpack)
   - LiveData - Notify domain layer data to views.
   - Lifecycle - Dispose of observing data when lifecycle state changes.
@@ -60,7 +63,9 @@ Modules Design:
         - Data
         - Di
         - Ui
-
+  - Util
+    - Util
+    
 ## Open API
 Valorant Agents uses the [Valorant-api](https://dash.valorant-api.com/) for required data.
 Valorant-api provides an extensive API containing data of most in-game items, assets and more!
