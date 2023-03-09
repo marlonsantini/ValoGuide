@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/marlonsantini/Valorant/blob/master/screenshots/agentsScreen.png" width="300"><br>
+  <img src="https://github.com/marlonsantini/Valorant/blob/master/screenshots/agentScreen.png" width="300"><br>
 </p>
 
 <p align="center">
