@@ -25,6 +25,6 @@
     </style>
 
     <style name="Font">
-<!--        <item name="fontFamily">@font/alata</item>-->
+        <item name="fontFamily">@font/alata</item>
     </style>
 </resources>
