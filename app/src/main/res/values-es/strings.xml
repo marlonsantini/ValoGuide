@@ -8,7 +8,7 @@
     <string name="special_abilities">// Habilidades especiales</string>
     <string name="damage_range">// Daño</string>
     <string name="skins">//Máscaras</string>
-    <string name="title_agents">Elija su <font color="#FF4457">Agente</font> favorito</string>
+    <string name="title_agents">Elija su <font color="#FF4457">Agente</font> Favorito</string>
     <string name="initiator">Iniciador</string>
     <string name="duelist">Duelista</string>
     <string name="sentinel">Centinela</string>

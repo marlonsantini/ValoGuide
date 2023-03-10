@@ -2,6 +2,8 @@ package fingerfire.com.valorant.util
 
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 import java.util.*
 
 class Util {
@@ -24,5 +26,10 @@ class Util {
         val endColorInt = Color.parseColor(endColor)
         val colors = intArrayOf(startColorInt, centerColor, endColorInt)
         return GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, colors)
+    }
+
+     fun initAdMob(adView: AdView) {
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
     }
 }

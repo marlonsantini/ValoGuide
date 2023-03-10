@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import fingerfire.com.valorant.databinding.FragmentAgentBinding
 import fingerfire.com.valorant.features.agents.data.response.AgentResponse
 import fingerfire.com.valorant.features.agents.ui.adapter.AgentsAdapter
+import fingerfire.com.valorant.util.Util
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -22,6 +23,7 @@ class AgentFragment : Fragment() {
     private val viewModel: AgentViewModel by viewModel()
 
     private var currentPosition = 0
+    private val util = Util()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,6 +45,7 @@ class AgentFragment : Fragment() {
             initRecyclerView(it)
             initAdapter(it)
             initChipGroup()
+            util.initAdMob(binding.adView)
         }
     }
 

@@ -16,7 +16,7 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/abilityImageView"
             android:layout_width="100dp"
-            android:layout_height="230dp"
+            android:layout_height="0dp"
             android:background="@color/main_red"
             android:paddingHorizontal="5dp"
             android:scaleType="fitCenter"

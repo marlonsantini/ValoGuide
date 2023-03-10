@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
-import com.google.android.gms.ads.AdRequest
 import fingerfire.com.valorant.databinding.FragmentWeaponDetailBinding
 import fingerfire.com.valorant.features.weapons.data.response.WeaponDetailDataResponse
 import fingerfire.com.valorant.features.weapons.ui.adapter.DamageRangeAdapter
@@ -71,12 +70,7 @@ class WeaponDetailFragment : Fragment() {
     private fun initWeaponDetailObserve() {
         viewModel.weaponsDetailLiveData.observe(viewLifecycleOwner) {
             initUi(it.data)
-            initAdMob()
+            util.initAdMob(binding.adView)
         }
-    }
-
-    private fun initAdMob() {
-        val adRequest = AdRequest.Builder().build()
-        binding.adView.loadAd(adRequest)
     }
 }

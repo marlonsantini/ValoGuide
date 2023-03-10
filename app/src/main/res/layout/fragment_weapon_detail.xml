@@ -162,11 +162,9 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvDamageRange"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_marginTop="14dp"
-                android:layout_marginBottom="32dp"
-                android:clipToPadding="false"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"

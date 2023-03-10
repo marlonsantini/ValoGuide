@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
-import com.google.android.gms.ads.AdRequest
 import fingerfire.com.valorant.databinding.FragmentMapDetailBinding
 import fingerfire.com.valorant.features.maps.data.response.MapDataResponse
+import fingerfire.com.valorant.util.Util
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -19,6 +19,8 @@ class MapDetailFragment : Fragment() {
     private lateinit var binding: FragmentMapDetailBinding
     private val args: MapDetailFragmentArgs by navArgs()
     private val viewModel: MapDetailViewModel by viewModel()
+
+    private val util = Util()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,12 +57,7 @@ class MapDetailFragment : Fragment() {
     private fun initMapDetailObserve() {
         viewModel.mapsDetailLiveData.observe(viewLifecycleOwner) {
             initUi(it.data)
-            initAdMob()
+            util.initAdMob(binding.adView)
         }
-    }
-
-    private fun initAdMob() {
-        val adRequest = AdRequest.Builder().build()
-        binding.adView.loadAd(adRequest)
     }
 }

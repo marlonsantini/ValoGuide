@@ -8,7 +8,7 @@
     <string name="special_abilities">// Capacités spéciales</string>
     <string name="damage_range">// Dégâts</string>
     <string name="skins">//Skins</string>
-    <string name="title_agents">Choisissez votre <font color="#FF4457">Agent</font> préféré</string>
+    <string name="title_agents">Choisissez votre <font color="#FF4457">Agent</font> Préféré</string>
     <string name="initiator">Initiateur</string>
     <string name="duelist">Duelliste</string>
     <string name="sentinel">Sentinelle</string>
