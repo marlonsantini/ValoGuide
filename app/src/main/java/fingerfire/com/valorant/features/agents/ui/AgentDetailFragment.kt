@@ -1,10 +1,12 @@
 package fingerfire.com.valorant.features.agents.ui
 
+import android.content.Context
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -24,6 +26,7 @@ class AgentDetailFragment : Fragment() {
     private val viewModel: AgentDetailViewModel by viewModel()
 
     private val util = Util()
+    private val mediaPlayer = MediaPlayer()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,6 +46,9 @@ class AgentDetailFragment : Fragment() {
 
     private fun initBackButtonClickListener() {
         binding.backButtonImageView.setOnClickListener {
+            if (mediaPlayer.isPlaying) {
+                mediaPlayer.stop()
+            }
             findNavController().popBackStack()
         }
     }
@@ -57,7 +63,8 @@ class AgentDetailFragment : Fragment() {
                 binding.rvAbilities.adapter = AbilitiesAdapter(item.abilities)
 
                 binding.ivVoice.setOnClickListener {
-                    startVoice(item.voiceLine.mediaList[0].wave)
+                    if (!mediaPlayer.isPlaying)
+                        startVoice(item.voiceLine.mediaList[0].wave)
                 }
 
                 val startColor = "#" + item.backgroundGradientColors[0].substring(0, 6)
@@ -70,8 +77,13 @@ class AgentDetailFragment : Fragment() {
     }
 
     private fun startVoice(wav: String) {
-        val mediaPlayer = MediaPlayer()
-        mediaPlayer.setDataSource(wav)
+        mediaPlayer.reset()
+        try {
+            mediaPlayer.setDataSource(wav)
+        } catch (e: IllegalStateException) {
+            mediaPlayer.reset()
+            mediaPlayer.setDataSource(wav)
+        }
         mediaPlayer.prepare()
         mediaPlayer.start()
         binding.ivVoice.setColorFilter(ContextCompat.getColor(requireContext(), R.color.main_red))
@@ -84,5 +96,22 @@ class AgentDetailFragment : Fragment() {
         viewModel.agentsDetailLiveData.observe(viewLifecycleOwner) {
             initUi(it.data)
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    if (mediaPlayer.isPlaying) {
+                        mediaPlayer.stop()
+                    }
+                    findNavController().popBackStack()
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(
+            this,
+            callback
+        )
     }
 }
