@@ -4,10 +4,11 @@ import fingerfire.com.valorant.api.ValorantApi
 import fingerfire.com.valorant.features.weapons.data.response.WeaponDetailResponse
 import fingerfire.com.valorant.features.weapons.data.response.WeaponResponse
 import fingerfire.com.valorant.util.Util
+import retrofit2.Response
 
 class WeaponsRepository(private val valorantApi: ValorantApi) {
 
-    suspend fun loadWeapons(): WeaponResponse {
+    suspend fun loadWeapons(): Response<WeaponResponse> {
         return valorantApi.getWeapons(Util.setAppLanguage)
     }
 

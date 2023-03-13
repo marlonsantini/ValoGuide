@@ -1,6 +1,7 @@
 package fingerfire.com.valorant.features.agents.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,11 +42,15 @@ class AgentFragment : Fragment() {
     }
 
     private fun observerAgents() {
-        viewModel.agentsLiveData.observe(viewLifecycleOwner) {
-            initRecyclerView(it)
-            initAdapter(it)
-            initChipGroup()
-            util.initAdMob(binding.adView)
+        viewModel.agentsLiveData.observe(viewLifecycleOwner) { response ->
+            if (response.isSuccessful) {
+                response.body()?.let { initRecyclerView(it) }
+                response.body()?.let { initAdapter(it) }
+                initChipGroup()
+                util.initAdMob(binding.adView)
+            } else {
+                Log.d("Response", response.errorBody().toString())
+            }
         }
     }
 

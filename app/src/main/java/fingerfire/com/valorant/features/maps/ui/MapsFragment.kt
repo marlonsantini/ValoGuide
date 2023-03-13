@@ -1,6 +1,7 @@
 package fingerfire.com.valorant.features.maps.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,9 +35,13 @@ class MapsFragment : Fragment() {
     }
 
     private fun observerAgents() {
-        viewModel.mapsLiveData.observe(viewLifecycleOwner) {
-            initRecyclerView()
-            initAdapter(it)
+        viewModel.mapsLiveData.observe(viewLifecycleOwner) { response ->
+            if (response.isSuccessful) {
+                initRecyclerView()
+                response.body()?.let { initAdapter(it) }
+            } else {
+                Log.d("Response", response.errorBody().toString())
+            }
         }
     }
 

@@ -6,6 +6,7 @@ import fingerfire.com.valorant.features.maps.data.response.MapDetailResponse
 import fingerfire.com.valorant.features.maps.data.response.MapResponse
 import fingerfire.com.valorant.features.weapons.data.response.WeaponDetailResponse
 import fingerfire.com.valorant.features.weapons.data.response.WeaponResponse
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -15,7 +16,7 @@ interface ValorantApi {
     suspend fun getAgents(
         @Query("language") language: String,
         @Query("isPlayableCharacter") isPlayableCharacter: Boolean
-    ): AgentResponse
+    ): Response<AgentResponse>
 
     @GET("agents/{agentUuid}")
     suspend fun getAgentsUuid(
@@ -26,7 +27,7 @@ interface ValorantApi {
     @GET("weapons")
     suspend fun getWeapons(
         @Query("language") language: String
-    ): WeaponResponse
+    ): Response<WeaponResponse>
 
     @GET("weapons/{weaponUuid}")
     suspend fun getWeaponsUuid(
@@ -37,7 +38,7 @@ interface ValorantApi {
     @GET("maps")
     suspend fun getMaps(
         @Query("language") language: String
-    ): MapResponse
+    ): Response<MapResponse>
 
     @GET("maps/{mapUuid}")
     suspend fun getMapsUuid(

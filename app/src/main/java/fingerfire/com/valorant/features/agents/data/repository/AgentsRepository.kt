@@ -4,10 +4,11 @@ import fingerfire.com.valorant.api.ValorantApi
 import fingerfire.com.valorant.features.agents.data.response.AgentDetailResponse
 import fingerfire.com.valorant.features.agents.data.response.AgentResponse
 import fingerfire.com.valorant.util.Util
+import retrofit2.Response
 
 class AgentsRepository(private val valorantApi: ValorantApi) {
 
-    suspend fun loadAgents(): AgentResponse {
+    suspend fun loadAgents(): Response<AgentResponse> {
         return valorantApi.getAgents(Util.setAppLanguage, true)
     }
 

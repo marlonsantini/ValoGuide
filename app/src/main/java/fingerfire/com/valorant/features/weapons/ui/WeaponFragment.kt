@@ -36,10 +36,12 @@ class WeaponFragment : Fragment() {
     }
 
     private fun observerWeapons() {
-        viewModel.weaponsLiveData.observe(viewLifecycleOwner) {
-            initRecyclerView()
-            initAdapter(it)
-            initSearchView()
+        viewModel.weaponsLiveData.observe(viewLifecycleOwner) { response ->
+            if(response.isSuccessful) {
+                initRecyclerView()
+                response.body()?.let { initAdapter(it) }
+                initSearchView()
+            }
         }
     }
 
