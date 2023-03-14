@@ -76,7 +76,7 @@ Valorant-api provides an extensive API containing data of most in-game items, as
 
 # License
 ```xml
-Designed and developed by 2022 .fingerfire
+Designed and developed by 2023 .fingerfire
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
