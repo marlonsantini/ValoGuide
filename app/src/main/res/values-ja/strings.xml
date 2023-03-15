@@ -16,4 +16,6 @@
     <string name="head">頭</string>
     <string name="leg">脚</string>
     <string name="body">本文</string>
+    <string name="failResponse">後でもう一度お試しください"</string>
+    <string name="internet">接続を確認してください</string>
 </resources>

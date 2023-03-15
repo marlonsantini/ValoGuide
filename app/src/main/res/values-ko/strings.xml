@@ -16,4 +16,6 @@
     <string name="head">머리</string>
     <string name="leg">다리</string>
     <string name="body">본문</string>
+    <string name="failResponse">나중에 다시 시도하세요"</string>
+    <string name="internet">연결 확인</string>
 </resources>

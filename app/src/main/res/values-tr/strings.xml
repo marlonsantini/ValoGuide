@@ -16,4 +16,6 @@
     <string name="head">Baş</string>
     <string name="leg">Bacaklar</string>
     <string name="body">Gövde</string>
+    <string name="failResponse">Lütfen daha sonra tekrar deneyin"</string>
+    <string name="internet">Bağlantınızı kontrol edin</string>
 </resources>

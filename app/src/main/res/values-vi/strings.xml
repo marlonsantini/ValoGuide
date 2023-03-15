@@ -17,4 +17,6 @@
     <string name="head">Đầu</string>
     <string name="leg">Chân</string>
     <string name="body">Cơ thể</string>
+    <string name="failResponse">Vui lòng thử lại sau"</string>
+    <string name="internet">Kiểm tra kết nối của bạn</string>
 </resources>

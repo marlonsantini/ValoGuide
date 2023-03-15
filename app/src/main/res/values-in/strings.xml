@@ -16,4 +16,6 @@
     <string name="head">Kepala</string>
     <string name="leg">Kaki</string>
     <string name="body">Tubuh</string>
+    <string name="failResponse">Silakan coba lagi nanti"</string>
+    <string name="internet">Periksa koneksi Anda</string>
 </resources>

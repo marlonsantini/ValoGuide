@@ -16,4 +16,6 @@
     <string name="head">หัว</string>
     <string name="leg">ขา</string>
     <string name="body">เนื้อหา</string>
+    <string name="failResponse">โปรดลองอีกครั้งในภายหลัง"</string>
+    <string name="internet">ตรวจสอบการเชื่อมต่อของคุณ</string>
 </resources>

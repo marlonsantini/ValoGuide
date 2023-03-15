@@ -16,4 +16,6 @@
     <string name="head">Голова</string>
     <string name="leg">Ноги</string>
     <string name="body">Тело</string>
+    <string name="failResponse">Пожалуйста, повторите попытку позже"</string>
+    <string name="internet">Проверьте подключение</string>
 </resources>

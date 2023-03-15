@@ -16,4 +16,6 @@
     <string name="head">頭</string>
     <string name="leg">腿</string>
     <string name="body">文本</string>
+    <string name="failResponse">請稍後再試"</string>
+    <string name="internet">檢查你的連接</string>
 </resources>

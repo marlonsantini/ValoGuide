@@ -15,4 +15,6 @@
     <string name="head">Cabeça</string>
     <string name="leg">Pernas</string>
     <string name="body">Corpo</string>
+    <string name="failResponse">Tente novamente mais tarde"</string>
+    <string name="internet">Verifique sua conexão</string>
 </resources>
