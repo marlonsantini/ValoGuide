@@ -1,7 +1,6 @@
 package fingerfire.com.valorant.features.agents.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import fingerfire.com.valorant.R
 import fingerfire.com.valorant.databinding.FragmentAgentBinding
 import fingerfire.com.valorant.features.agents.data.response.AgentResponse
 import fingerfire.com.valorant.features.agents.ui.adapter.AgentsAdapter
@@ -36,23 +36,31 @@ class AgentFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        observerAgents()
+        if(!util.isInternetAvailable(requireContext())) {
+            util.showDialog(requireActivity(), "Verifique sua conexão")
+        } else {
+            observerAgents()
 
-        viewModel.getAgents()
+            viewModel.getAgents()
+        }
     }
 
     private fun observerAgents() {
         viewModel.agentsLiveData.observe(viewLifecycleOwner) { response ->
-            if (response.isSuccessful) {
+            if (response.isSuccessful && response.body() != null) {
                 response.body()?.let { initRecyclerView(it) }
                 response.body()?.let { initAdapter(it) }
                 initChipGroup()
                 util.initAdMob(binding.adView)
+            } else if (response.errorBody() != null) {
+                util.showDialog(requireActivity(), resources.getString(R.string.failResponse))
             } else {
-                Log.d("Response", response.errorBody().toString())
+                util.showDialog(requireActivity(), resources.getString(R.string.failResponse))
             }
         }
     }
+
+
 
     private fun initRecyclerView(agentResponse: AgentResponse) {
         val pagerSnapHelper = PagerSnapHelper()

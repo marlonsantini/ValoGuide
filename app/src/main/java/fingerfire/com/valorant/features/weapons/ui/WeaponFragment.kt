@@ -9,9 +9,11 @@ import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import fingerfire.com.valorant.R
 import fingerfire.com.valorant.databinding.FragmentWeaponBinding
 import fingerfire.com.valorant.features.weapons.data.response.WeaponResponse
 import fingerfire.com.valorant.features.weapons.ui.adapter.WeaponsAdapter
+import fingerfire.com.valorant.util.Util
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WeaponFragment : Fragment() {
@@ -19,6 +21,8 @@ class WeaponFragment : Fragment() {
     private lateinit var binding: FragmentWeaponBinding
     private lateinit var weaponsAdapter: WeaponsAdapter
     private val viewModel: WeaponViewModel by viewModel()
+
+    private val util = Util()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,9 +34,13 @@ class WeaponFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        observerWeapons()
+        if(!util.isInternetAvailable(requireContext())) {
+            util.showDialog(requireActivity(), "Verifique sua conexão")
+        } else {
+            observerWeapons()
 
-        viewModel.getWeapons()
+            viewModel.getWeapons()
+        }
     }
 
     private fun observerWeapons() {
@@ -41,6 +49,10 @@ class WeaponFragment : Fragment() {
                 initRecyclerView()
                 response.body()?.let { initAdapter(it) }
                 initSearchView()
+            } else if (response.errorBody() != null) {
+                util.showDialog(requireActivity(), resources.getString(R.string.failResponse))
+            } else {
+                util.showDialog(requireActivity(), resources.getString(R.string.failResponse))
             }
         }
     }
