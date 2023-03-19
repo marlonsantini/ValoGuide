@@ -13,6 +13,7 @@
 </p>
 
 <p align="center">
+Teste App
 A sample android app consuming Valorant API to display valorant agents, maps and weapons, it has been built with Architecture Components and MVVM pattern.
 </p>
 
