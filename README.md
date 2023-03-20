@@ -49,22 +49,27 @@ Modules Design:
 - App
   - Api
   - Di
+  - Extensions
   - Network
   - Features
       - Agents
         - Data
         - Di
         - Ui
+          - Adapter
+          - ViewState
       - Maps
         - Data
         - Di
         - Ui
+          - Adapter
+          - ViewState
       - Weapons
         - Data
         - Di
         - Ui
-  - Util
-    - Util
+          - Adapter
+          - ViewState
     
 ## Open API
 Valorant Agents uses the [Valorant-api](https://dash.valorant-api.com/) for required data.
