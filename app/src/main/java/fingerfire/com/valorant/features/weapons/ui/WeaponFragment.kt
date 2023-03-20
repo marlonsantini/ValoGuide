@@ -11,9 +11,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import fingerfire.com.valorant.R
 import fingerfire.com.valorant.databinding.FragmentWeaponBinding
+import fingerfire.com.valorant.extensions.isInternetAvailable
+import fingerfire.com.valorant.extensions.showDialogValorant
 import fingerfire.com.valorant.features.weapons.data.response.WeaponResponse
 import fingerfire.com.valorant.features.weapons.ui.adapter.WeaponsAdapter
-import fingerfire.com.valorant.util.Util
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WeaponFragment : Fragment() {
@@ -21,8 +22,6 @@ class WeaponFragment : Fragment() {
     private lateinit var binding: FragmentWeaponBinding
     private lateinit var weaponsAdapter: WeaponsAdapter
     private val viewModel: WeaponViewModel by viewModel()
-
-    private val util = Util()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,8 +33,8 @@ class WeaponFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if(!util.isInternetAvailable(requireContext())) {
-            util.showDialog(requireActivity(), "Verifique sua conexão")
+        if(!requireActivity().isInternetAvailable()) {
+            requireActivity().showDialogValorant(R.string.internet)
         } else {
             observerWeapons()
 
@@ -44,15 +43,13 @@ class WeaponFragment : Fragment() {
     }
 
     private fun observerWeapons() {
-        viewModel.weaponsLiveData.observe(viewLifecycleOwner) { response ->
-            if(response.isSuccessful) {
+        viewModel.weaponsLiveData.observe(viewLifecycleOwner) { viewState ->
+            if(viewState.sucess != null) {
                 initRecyclerView()
-                response.body()?.let { initAdapter(it) }
+                initAdapter(viewState.sucess)
                 initSearchView()
-            } else if (response.errorBody() != null) {
-                util.showDialog(requireActivity(), resources.getString(R.string.failResponse))
-            } else {
-                util.showDialog(requireActivity(), resources.getString(R.string.failResponse))
+            } else if (viewState.failure) {
+                requireActivity().showDialogValorant(R.string.failResponse)
             }
         }
     }

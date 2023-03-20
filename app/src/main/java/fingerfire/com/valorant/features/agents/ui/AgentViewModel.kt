@@ -5,15 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import fingerfire.com.valorant.features.agents.data.repository.AgentsRepository
-import fingerfire.com.valorant.features.agents.data.response.AgentResponse
+import fingerfire.com.valorant.features.agents.ui.viewstate.AgentViewState
 import kotlinx.coroutines.launch
-import retrofit2.Response
 
 class AgentViewModel(private val agentsRepository: AgentsRepository) : ViewModel() {
 
-    private val agentsMutableLiveData: MutableLiveData<Response<AgentResponse>> =
-        MutableLiveData<Response<AgentResponse>>()
-    val agentsLiveData: LiveData<Response<AgentResponse>>
+    private val agentsMutableLiveData: MutableLiveData<AgentViewState> =
+        MutableLiveData<AgentViewState>()
+    val agentsLiveData: LiveData<AgentViewState>
         get() {
             return agentsMutableLiveData
         }
@@ -21,7 +20,11 @@ class AgentViewModel(private val agentsRepository: AgentsRepository) : ViewModel
     fun getAgents() {
         viewModelScope.launch {
             val agentResponse = agentsRepository.loadAgents()
-            agentsMutableLiveData.postValue(agentResponse)
+            if (agentResponse.isSuccessful && agentResponse.body() != null) {
+                agentsMutableLiveData.postValue(AgentViewState(sucess = agentResponse.body()))
+            } else if (agentResponse.errorBody() != null) {
+                agentsMutableLiveData.postValue(AgentViewState(failure = true))
+            }
         }
     }
 }

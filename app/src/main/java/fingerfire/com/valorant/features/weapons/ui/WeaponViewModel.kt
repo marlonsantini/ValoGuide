@@ -5,15 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import fingerfire.com.valorant.features.weapons.data.repository.WeaponsRepository
-import fingerfire.com.valorant.features.weapons.data.response.WeaponResponse
+import fingerfire.com.valorant.features.weapons.ui.viewstate.WeaponViewState
 import kotlinx.coroutines.launch
-import retrofit2.Response
 
 class WeaponViewModel(private val weaponsRepository: WeaponsRepository) : ViewModel() {
 
-    private val weaponsMutableLiveData: MutableLiveData<Response<WeaponResponse>> =
-        MutableLiveData<Response<WeaponResponse>>()
-    val weaponsLiveData: LiveData<Response<WeaponResponse>>
+    private val weaponsMutableLiveData: MutableLiveData<WeaponViewState> =
+        MutableLiveData<WeaponViewState>()
+    val weaponsLiveData: LiveData<WeaponViewState>
         get() {
             return weaponsMutableLiveData
         }
@@ -21,7 +20,11 @@ class WeaponViewModel(private val weaponsRepository: WeaponsRepository) : ViewMo
     fun getWeapons() {
         viewModelScope.launch {
             val weaponResponse = weaponsRepository.loadWeapons()
-            weaponsMutableLiveData.postValue(weaponResponse)
+            if (weaponResponse.isSuccessful && weaponResponse.body() != null) {
+                weaponsMutableLiveData.postValue(WeaponViewState(sucess = weaponResponse.body()))
+            } else if (weaponResponse.errorBody() != null) {
+                weaponsMutableLiveData.postValue(WeaponViewState(failure = true))
+            }
         }
     }
 }

@@ -5,13 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import fingerfire.com.valorant.features.maps.data.repository.MapsRepository
-import fingerfire.com.valorant.features.maps.data.response.MapResponse
+import fingerfire.com.valorant.features.maps.ui.viewstate.MapViewState
 import kotlinx.coroutines.launch
-import retrofit2.Response
-
 class MapsViewModel(private val mapsRepository: MapsRepository) : ViewModel() {
-    private val mapsMutableLiveData: MutableLiveData<Response<MapResponse>> = MutableLiveData<Response<MapResponse>>()
-    val mapsLiveData: LiveData<Response<MapResponse>>
+
+    private val mapsMutableLiveData: MutableLiveData<MapViewState> =
+        MutableLiveData<MapViewState>()
+    val mapsLiveData: LiveData<MapViewState>
         get() {
             return mapsMutableLiveData
         }
@@ -19,7 +19,11 @@ class MapsViewModel(private val mapsRepository: MapsRepository) : ViewModel() {
     fun getMaps() {
         viewModelScope.launch {
             val mapResponse = mapsRepository.loadMaps()
-            mapsMutableLiveData.postValue(mapResponse)
+            if (mapResponse.isSuccessful && mapResponse.body() != null) {
+                mapsMutableLiveData.postValue(MapViewState(sucess = mapResponse.body()))
+            } else if (mapResponse.errorBody() != null) {
+                mapsMutableLiveData.postValue(MapViewState(failure = true))
+            }
         }
     }
 }

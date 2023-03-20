@@ -11,9 +11,11 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import fingerfire.com.valorant.R
 import fingerfire.com.valorant.databinding.FragmentAgentBinding
+import fingerfire.com.valorant.extensions.initAdMob
+import fingerfire.com.valorant.extensions.isInternetAvailable
+import fingerfire.com.valorant.extensions.showDialogValorant
 import fingerfire.com.valorant.features.agents.data.response.AgentResponse
 import fingerfire.com.valorant.features.agents.ui.adapter.AgentsAdapter
-import fingerfire.com.valorant.util.Util
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -24,7 +26,6 @@ class AgentFragment : Fragment() {
     private val viewModel: AgentViewModel by viewModel()
 
     private var currentPosition = 0
-    private val util = Util()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,8 +37,8 @@ class AgentFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if(!util.isInternetAvailable(requireContext())) {
-            util.showDialog(requireActivity(), "Verifique sua conexão")
+        if (!requireActivity().isInternetAvailable()) {
+            requireActivity().showDialogValorant(R.string.internet)
         } else {
             observerAgents()
 
@@ -46,20 +47,17 @@ class AgentFragment : Fragment() {
     }
 
     private fun observerAgents() {
-        viewModel.agentsLiveData.observe(viewLifecycleOwner) { response ->
-            if (response.isSuccessful && response.body() != null) {
-                response.body()?.let { initRecyclerView(it) }
-                response.body()?.let { initAdapter(it) }
+        viewModel.agentsLiveData.observe(viewLifecycleOwner) { viewState ->
+            if (viewState.sucess != null) {
+                initRecyclerView(viewState.sucess)
+                initAdapter(viewState.sucess)
                 initChipGroup()
-                util.initAdMob(binding.adView)
-            } else if (response.errorBody() != null) {
-                util.showDialog(requireActivity(), resources.getString(R.string.failResponse))
-            } else {
-                util.showDialog(requireActivity(), resources.getString(R.string.failResponse))
+                binding.adView.initAdMob()
+            } else if (viewState.failure) {
+                requireActivity().showDialogValorant(R.string.failResponse)
             }
         }
     }
-
 
 
     private fun initRecyclerView(agentResponse: AgentResponse) {
@@ -101,43 +99,29 @@ class AgentFragment : Fragment() {
     private fun initChipGroup() {
         binding.chipGroup.clearCheck()
         binding.initiator.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                agentsAdapter.filter(binding.initiator.text.toString())
-                scrollCurrentPositionChip()
-            } else {
-                agentsAdapter.filter("")
-                scrollCurrentPositionChip()
-            }
+            filterList(isChecked, binding.initiator.text.toString())
         }
 
         binding.controller.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                agentsAdapter.filter(binding.controller.text.toString())
-                scrollCurrentPositionChip()
-            } else {
-                agentsAdapter.filter("")
-                scrollCurrentPositionChip()
-            }
+            filterList(isChecked, binding.controller.text.toString())
         }
 
         binding.sentinel.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                agentsAdapter.filter(binding.sentinel.text.toString())
-                scrollCurrentPositionChip()
-            } else {
-                agentsAdapter.filter("")
-                scrollCurrentPositionChip()
-            }
+            filterList(isChecked, binding.sentinel.text.toString())
         }
 
         binding.duelist.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                agentsAdapter.filter(binding.duelist.text.toString())
-                scrollCurrentPositionChip()
-            } else {
-                agentsAdapter.filter("")
-                scrollCurrentPositionChip()
-            }
+            filterList(isChecked, binding.duelist.text.toString())
+        }
+    }
+
+    private fun filterList(isChecked: Boolean, textToFilter: String) {
+        if (isChecked) {
+            agentsAdapter.filter(textToFilter)
+            scrollCurrentPositionChip()
+        } else {
+            agentsAdapter.filter("")
+            scrollCurrentPositionChip()
         }
     }
 

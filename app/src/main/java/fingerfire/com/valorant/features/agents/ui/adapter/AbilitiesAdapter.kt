@@ -5,14 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import fingerfire.com.valorant.databinding.ItemAbilitiesBinding
+import fingerfire.com.valorant.extensions.createGradientDrawable
 import fingerfire.com.valorant.features.agents.data.response.AbilitiesResponse
-import fingerfire.com.valorant.util.Util
 
 class AbilitiesAdapter(
     private val abilitiesList: List<AbilitiesResponse>
 ) : RecyclerView.Adapter<AbilitiesAdapter.AbilitiesViewHolder>() {
-
-    private val util = Util()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AbilitiesViewHolder {
         return AbilitiesViewHolder(
@@ -28,7 +26,7 @@ class AbilitiesAdapter(
                 binding.abilityImageView.load(displayIcon)
                 binding.abilityDescriptionTextView.text = description
 
-                val drawable = util.createGradientDrawable("#ba89ffff", "#6241ccff", "#38328eff")
+                val drawable = createGradientDrawable("#ba89ffff", "#6241ccff", "#38328eff")
                 binding.abilityImageView.background = drawable
             }
         }
