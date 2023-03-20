@@ -21,9 +21,9 @@ A sample android app consuming Valorant API to display valorant agents, maps and
 - [Kotlin](https://kotlinlang.org/)
 - [Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
 - [Koin](https://insert-koin.io) for dependency injection.
-- [Firebase] (https://firebase.google.com/) for Crashlytics and Analytics
-- [Admob] (https://admob.google.com/)
-- [CircleIndicator] (https://github.com/ongakuer/CircleIndicator) A lightweight indicator lists
+- [Firebase](https://firebase.google.com/) for Crashlytics and Analytics
+- [Admob](https://admob.google.com/)
+- [CircleIndicator](https://github.com/ongakuer/CircleIndicator) A lightweight indicator lists
 - [JetPack](https://developer.android.com/jetpack)
   - LiveData - Notify domain layer data to views.
   - Lifecycle - Dispose of observing data when lifecycle state changes.
