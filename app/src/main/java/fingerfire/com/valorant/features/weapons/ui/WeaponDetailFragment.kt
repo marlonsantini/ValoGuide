@@ -58,6 +58,7 @@ class WeaponDetailFragment : Fragment() {
 
                 } else {
                     binding.damageRangeContainer.visibility = View.GONE
+                    binding.weaponCategoryTextView.visibility = View.GONE
                 }
 
                 val drawable = createGradientDrawable("#000000", "#AA9B9B", "#C0ACA6")

@@ -123,7 +123,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tvHead"
                     style="@style/Font"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/tvBody"
                     style="@style/Font"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -147,7 +147,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/tvLeg"
                     style="@style/Font"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
