@@ -16,6 +16,11 @@
 A sample android app consuming Valorant API to display valorant agents, maps and weapons, it has been built with Architecture Components and MVVM pattern.
 </p>
 
+<p align="center">
+  <img src="https://github.com/marlonsantini/Valorant/blob/master/screenshots/GooglePlay.png" width="300"><br>
+  <a href="https://play.google.com/store/apps/details?id=fingerfire.com.valorant">Guide for Valorant</a>
+</p>
+
 ## Tech stack & Open-source libraries
 - Minimum SDK level 26
 - [Kotlin](https://kotlinlang.org/)
