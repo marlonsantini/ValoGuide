@@ -51,7 +51,11 @@ class WeaponDetailFragment : Fragment() {
 
 
                 if (item.displayName != "Confronto") {
-                    binding.weaponCategoryTextView.text = item.shopData.categoryText
+                    if(item.shopData != null) {
+                        binding.weaponCategoryTextView.text = item.shopData.categoryText
+                    } else {
+                        binding.weaponCategoryTextView.text = ""
+                    }
 
                     binding.rvDamageRange.adapter =
                         context?.let { DamageRangeAdapter(item.weaponStats.damageRanges) }

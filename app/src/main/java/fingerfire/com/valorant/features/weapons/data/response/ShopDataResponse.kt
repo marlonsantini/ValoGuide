@@ -6,5 +6,5 @@ data class ShopDataResponse(
     @Json(name = "cost")
     val cost: Int,
     @Json(name = "categoryText")
-    val categoryText: String
+    val categoryText: String?
 )
