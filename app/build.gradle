@@ -14,8 +14,8 @@ android {
         applicationId "fingerfire.com.valorant"
         minSdk 26
         targetSdk 33
-        versionCode 5
-        versionName "1.4"
+        versionCode 6
+        versionName "1.5"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -80,8 +80,8 @@ dependencies {
 
     //Firebase
     implementation platform('com.google.firebase:firebase-bom:31.2.3')
-    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.5'
-    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.0'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.6'
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.1'
 
     //ADMOB
     implementation 'com.google.android.gms:play-services-ads:21.5.0'
