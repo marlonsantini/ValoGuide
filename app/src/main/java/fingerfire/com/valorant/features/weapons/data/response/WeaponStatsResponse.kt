@@ -4,5 +4,5 @@ import com.squareup.moshi.Json
 
 data class WeaponStatsResponse(
     @Json(name = "damageRanges")
-    val damageRanges: MutableList<DamageRangesResponse>
+    var damageRanges: MutableList<DamageRangesResponse>?
 )

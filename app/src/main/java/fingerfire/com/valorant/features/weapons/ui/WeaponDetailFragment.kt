@@ -11,6 +11,7 @@ import coil.load
 import fingerfire.com.valorant.databinding.FragmentWeaponDetailBinding
 import fingerfire.com.valorant.extensions.createGradientDrawable
 import fingerfire.com.valorant.extensions.initAdMob
+import fingerfire.com.valorant.features.weapons.data.response.DamageRangesResponse
 import fingerfire.com.valorant.features.weapons.data.response.WeaponDetailDataResponse
 import fingerfire.com.valorant.features.weapons.ui.adapter.DamageRangeAdapter
 import fingerfire.com.valorant.features.weapons.ui.adapter.SkinsAdapter
@@ -21,6 +22,10 @@ class WeaponDetailFragment : Fragment() {
     private lateinit var binding: FragmentWeaponDetailBinding
     private val args: WeaponDetailFragmentArgs by navArgs()
     private val viewModel: WeaponDetailViewModel by viewModel()
+
+    private val fakeDamageRanges = mutableListOf(
+        DamageRangesResponse("eRRor", "eRRor", 0.0, 0.0, 0.0 )
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -57,8 +62,8 @@ class WeaponDetailFragment : Fragment() {
                         binding.weaponCategoryTextView.text = ""
                     }
 
-                    binding.rvDamageRange.adapter =
-                        context?.let { DamageRangeAdapter(item.weaponStats.damageRanges) }
+                    binding.rvDamageRange.adapter = DamageRangeAdapter(item.weaponStats.damageRanges ?: fakeDamageRanges)
+
 
                 } else {
                     binding.damageRangeContainer.visibility = View.GONE
