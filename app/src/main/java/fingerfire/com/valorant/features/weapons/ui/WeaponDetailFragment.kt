@@ -55,14 +55,15 @@ class WeaponDetailFragment : Fragment() {
                 binding.rvSkins.adapter = SkinsAdapter(item.skins)
 
 
-                if (item.displayName != "Confronto") {
+                if (item.uuid != WEAPON_MELEE) {
                     if(item.shopData != null) {
                         binding.weaponCategoryTextView.text = item.shopData.categoryText
                     } else {
                         binding.weaponCategoryTextView.text = ""
                     }
 
-                    binding.rvDamageRange.adapter = DamageRangeAdapter(item.weaponStats.damageRanges ?: fakeDamageRanges)
+                    binding.rvDamageRange.adapter = DamageRangeAdapter(
+                        item.weaponStats?.damageRanges ?: fakeDamageRanges)
 
 
                 } else {
@@ -81,5 +82,9 @@ class WeaponDetailFragment : Fragment() {
             initUi(it.data)
             binding.adView.initAdMob()
         }
+    }
+
+    companion object {
+        private const val WEAPON_MELEE = "2f59173c-4bed-b6c3-2191-dea9b58be9c7"
     }
 }

@@ -10,7 +10,7 @@ data class WeaponDetailDataResponse(
     @Json(name = "displayIcon")
     val displayIcon: String,
     @Json(name = "weaponStats")
-    val weaponStats: WeaponStatsResponse,
+    val weaponStats: WeaponStatsResponse?,
     @Json(name = "shopData")
     val shopData: ShopDataResponse?,
     @Json(name = "skins")
