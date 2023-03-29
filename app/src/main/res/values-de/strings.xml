@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Valorant-Leitfaden</string>
+    <string name="app_name">ValoGuide</string>
     <string name="agents">Agenten</string>
     <string name="maps">Karten</string>
     <string name="arsenal">Arsenal</string>

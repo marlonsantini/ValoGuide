@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Руководство по Valorant</string>
+    <string name="app_name">ВалоГид</string>
     <string name="agents">Агенты</string>
     <string name="maps">Карты</string>
     <string name="arsenal">Арсенал</string>

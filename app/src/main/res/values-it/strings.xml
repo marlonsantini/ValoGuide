@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Guida al Valorant</string>
+    <string name="app_name">ValoGuide</string>
     <string name="agents">Agenti</string>
     <string name="maps">Mappe</string>
     <string name="arsenal">Arsenale</string>
