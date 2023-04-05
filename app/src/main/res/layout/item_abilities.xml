@@ -20,9 +20,9 @@
             android:background="@color/main_red"
             android:paddingHorizontal="5dp"
             android:scaleType="fitCenter"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/abilityTitleTextView"
@@ -30,9 +30,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:paddingTop="5dp"
-            android:paddingStart="5dp"
             android:gravity="center"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
             android:textAllCaps="true"
             android:textColor="@color/main_red"
             android:textSize="16sp"
@@ -47,8 +47,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="4dp"
-            android:paddingStart="5dp"
             android:layout_marginEnd="16dp"
+            android:paddingStart="5dp"
             android:textColor="@color/white"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"

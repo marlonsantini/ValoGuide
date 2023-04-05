@@ -33,7 +33,7 @@ class WeaponFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if(!requireActivity().isInternetAvailable()) {
+        if (!requireActivity().isInternetAvailable()) {
             requireActivity().showDialogValorant(R.string.internet)
         } else {
             observerWeapons()
@@ -44,7 +44,7 @@ class WeaponFragment : Fragment() {
 
     private fun observerWeapons() {
         viewModel.weaponsLiveData.observe(viewLifecycleOwner) { viewState ->
-            if(viewState.sucess != null) {
+            if (viewState.sucess != null) {
                 initRecyclerView()
                 initAdapter(viewState.sucess)
                 initSearchView()

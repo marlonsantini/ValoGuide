@@ -31,7 +31,7 @@ class MapsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if(!requireActivity().isInternetAvailable()) {
+        if (!requireActivity().isInternetAvailable()) {
             requireActivity().showDialogValorant(R.string.internet)
         } else {
             observerMaps()

@@ -24,7 +24,7 @@ class WeaponDetailFragment : Fragment() {
     private val viewModel: WeaponDetailViewModel by viewModel()
 
     private val fakeDamageRanges = mutableListOf(
-        DamageRangesResponse("eRRor", "eRRor", 0.0, 0.0, 0.0 )
+        DamageRangesResponse("eRRor", "eRRor", 0.0, 0.0, 0.0)
     )
 
     override fun onCreateView(
@@ -56,14 +56,15 @@ class WeaponDetailFragment : Fragment() {
 
 
                 if (item.uuid != WEAPON_MELEE) {
-                    if(item.shopData != null) {
+                    if (item.shopData != null) {
                         binding.weaponCategoryTextView.text = item.shopData.categoryText
                     } else {
                         binding.weaponCategoryTextView.text = ""
                     }
 
                     binding.rvDamageRange.adapter = DamageRangeAdapter(
-                        item.weaponStats?.damageRanges ?: fakeDamageRanges)
+                        item.weaponStats?.damageRanges ?: fakeDamageRanges
+                    )
 
 
                 } else {

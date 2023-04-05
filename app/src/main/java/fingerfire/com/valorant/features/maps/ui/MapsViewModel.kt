@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import fingerfire.com.valorant.features.maps.data.repository.MapsRepository
 import fingerfire.com.valorant.features.maps.ui.viewstate.MapViewState
 import kotlinx.coroutines.launch
+
 class MapsViewModel(private val mapsRepository: MapsRepository) : ViewModel() {
 
     private val mapsMutableLiveData: MutableLiveData<MapViewState> =
