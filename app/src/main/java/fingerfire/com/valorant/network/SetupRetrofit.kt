@@ -10,7 +10,7 @@ object SetupRetrofit {
 
     private const val BASE_URL = "https://valorant-api.com/v1/"
 
-    fun client() = OkHttpClient.Builder()
+    private fun client() = OkHttpClient.Builder()
         .connectTimeout(10, TimeUnit.SECONDS)
         .readTimeout(10, TimeUnit.SECONDS)
         .addInterceptor(HttpLoggingInterceptor().apply {
