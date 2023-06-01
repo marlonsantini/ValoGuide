@@ -70,6 +70,7 @@ class AgentFragment : Fragment() {
         binding.rvAgents.onFlingListener = null
 
         pagerSnapHelper.attachToRecyclerView(binding.rvAgents)
+
         binding.indicator.attachToRecyclerView(binding.rvAgents, pagerSnapHelper)
         binding.indicator.createIndicators(agentResponse.agents.size, currentPosition)
 
