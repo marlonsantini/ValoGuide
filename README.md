@@ -1,4 +1,4 @@
-<h1 align="center"> Valorant Info </h1>
+<h1 align="center"> Valorant Guide </h1>
 
 <p align="center">
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
@@ -18,7 +18,7 @@ A sample android app consuming Valorant API to display valorant agents, maps and
 
 <p align="center">
   <img src="https://github.com/marlonsantini/Valorant/blob/master/screenshots/GooglePlay.png" width="300"><br>
-  <a href="https://play.google.com/store/apps/details?id=fingerfire.com.valorant">Guide for Valorant</a>
+  <a href="https://play.google.com/store/apps/details?id=fingerfire.com.valorant">ValoGuide</a>
 </p>
 
 ## Tech stack & Open-source libraries
