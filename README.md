@@ -47,7 +47,7 @@ A sample android app consuming Valorant API to display valorant agents, maps and
 - [Coil](https://coil-kt.github.io/coil/) - For Loading images from Urls.
 
 ## Architecture
-Valorant Agents is Multi-modular application with a meaningful separation for layers and features with the necessary grouping.
+ValoGuide is Multi-modular application with a meaningful separation for layers and features with the necessary grouping.
 With MVVM architecture with an additional Domain layer for each module by itself.
 
 Modules Design:
@@ -59,25 +59,31 @@ Modules Design:
   - Features
       - Agents
         - Data
+          - Repository
+          - Response
         - Di
         - Ui
           - Adapter
           - ViewState
       - Maps
         - Data
+          - Repository
+          - Response
         - Di
         - Ui
           - Adapter
           - ViewState
       - Weapons
         - Data
+          - Repository
+          - Response
         - Di
         - Ui
           - Adapter
           - ViewState
     
 ## Open API
-Valorant Agents uses the [Valorant-api](https://dash.valorant-api.com/) for required data.
+ValoGuide uses the [Valorant-api](https://dash.valorant-api.com/) for required data.
 Valorant-api provides an extensive API containing data of most in-game items, assets and more!
 
 ## In progress 🚧.
