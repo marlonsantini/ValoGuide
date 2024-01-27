@@ -1,18 +1,15 @@
 package fingerfire.com.valorant.features.agents.ui
 
 import android.content.Context
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
-import fingerfire.com.valorant.R
 import fingerfire.com.valorant.databinding.FragmentAgentDetailBinding
 import fingerfire.com.valorant.extensions.createGradientDrawable
 import fingerfire.com.valorant.features.agents.data.response.AgentDataResponse
