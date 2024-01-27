@@ -113,6 +113,7 @@
             android:contentDescription="@string/app_name"
             android:paddingHorizontal="16dp"
             android:src="@drawable/ic_sound"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/adView" />
 
