@@ -75,9 +75,9 @@ dependencies {
     implementation 'me.relex:circleindicator:2.1.6'
 
     //Firebase
-    implementation platform('com.google.firebase:firebase-bom:31.2.3')
-    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.7'
-    implementation 'com.google.firebase:firebase-analytics-ktx:21.3.0'
+    implementation platform('com.google.firebase:firebase-bom:33.5.1')
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:19.2.1'
+    implementation 'com.google.firebase:firebase-analytics-ktx:22.1.2'
 
     //ADMOB
     implementation 'com.google.android.gms:play-services-ads:22.1.0'
