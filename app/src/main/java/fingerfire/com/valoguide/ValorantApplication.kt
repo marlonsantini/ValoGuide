@@ -4,6 +4,7 @@ import android.app.Application
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.FirebaseApp
 import fingerfire.com.valoguide.di.ApiModules
+import fingerfire.com.valoguide.di.ComposeModules
 import fingerfire.com.valoguide.di.NetworkModules
 import fingerfire.com.valoguide.features.agents.di.AgentsDataModules
 import fingerfire.com.valoguide.features.agents.di.AgentsUiModules
@@ -26,6 +27,7 @@ class ValorantApplication : Application() {
                 listOf(
                     NetworkModules().getNetworkModules(),
                     ApiModules().getApiModules(),
+                    ComposeModules().getComposeModules(),
                     AgentsDataModules().getAgentsDataModules(),
                     AgentsUiModules().getViewModules(),
                     WeaponsDataModules().getWeaponsDataModules(),
